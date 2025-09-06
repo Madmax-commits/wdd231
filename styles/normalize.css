@@ -1,5 +1,5 @@
 #menu {
-  display: block;
+  display: flex;
   background: none;
   border: none;
   font-size: 2rem;
@@ -8,7 +8,7 @@
 }
 
 nav {
-  display: none;
+  display: absolute;
   flex-direction: column;
   background-color: #0066cc;
   padding: 1rem;
