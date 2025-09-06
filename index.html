@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WDD231 Course Home Page by T.DOT" />
+  <meta name="author" content="T.DOT" />
+  <title>WDD231 Home Page</title>
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/course.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="images/FMA_LOGO-removebg-preview.png" alt="Site Logo" />
+    <span>T.DOT</span>
+    <button id="menu">&#9776;</button>
+  </header>
+
+  <nav id="navigation">
+    <a href="index.html">Home</a>
+    <a href="chamber.html">Chamber</a>
+    <a href="final.html">Final</a>
+  </nav>
+
+  <main>
+    <h1>Home</h1>
+    <section>
+      <h2>Welcome</h2>
+      <p>This is the home page for WDD231.</p>
+    </section>
+    <section>
+      <h2>Certificate Courses</h2>
+      <div id="course-buttons">
+        <button id="all">All Courses</button>
+        <button id="wdd">WDD Courses</button>
+        <button id="cse">CSE Courses</button>
+      </div>
+      <div id="courses"></div>
+      <p>Total Credits: <span id="totalCredits">0</span></p>
+    </section>
+    <section>
+      <h2>Resources</h2>
+      <p>Useful links and tools for the course.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+    <p>&copy; <span id="year"></span> T.DOT, Nigeria</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>
+
