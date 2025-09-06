@@ -228,3 +228,26 @@ footer a:hover {
     justify-content: flex-start;
   }
 }
+nav {
+  display: none;
+  flex-direction: column;
+  background-color: #0066cc;
+  padding: 1rem;
+}
+
+nav.open {
+  display: flex;
+}
+@media (min-width: 768px) {
+  #menu {
+    display: none;
+  }
+
+  nav {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    background-color: transparent;
+  }
+}
