@@ -30,4 +30,21 @@ document.getElementById("cse").addEventListener("click", () => {
 });
 
 renderCourses(courses);
+courses.forEach(course => {
+  const card = document.createElement("div");
+  card.textContent = `${course.code} - ${course.name}`;
+  document.getElementById("courses").appendChild(card);
+});
 
+document.getElementById("wdd").onclick = () => {
+  renderCourses(courses.filter(c => c.code.startsWith("WDD")));
+};
+
+const total = filteredCourses.reduce((sum, c) => sum + c.credits, 0);
+document.getElementById("totalCredits").textContent = total;
+
+
+card.className = course.completed ? "completed" : "incomplete";
+
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
