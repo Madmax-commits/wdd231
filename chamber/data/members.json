@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Sunrise Bakery",
+    "address": "123 Main St, Timbuktu",
+    "phone": "555-1234",
+    "website": "https://sunrisebakery.com",
+    "image": "sunrise.jpg",
+    "membership": 3,
+    "description": "Award-winning pastries and breads."
+  },
+  {
+    "name": "TechNova Solutions",
+    "address": "456 Innovation Blvd",
+    "phone": "555-5678",
+    "website": "https://technova.com",
+    "image": "technova.jpg",
+    "membership": 2,
+    "description": "IT consulting and software development."
+  },
+  {
+    "name": "GreenLeaf Market",
+    "address": "789 Eco Rd",
+    "phone": "555-9012",
+    "website": "https://greenleafmarket.com",
+    "image": "greenleaf.jpg",
+    "membership": 1,
+    "description": "Organic groceries and local produce."
+  },
+  {
+    "name": "Timbuktu Tours",
+    "address": "101 Travel Way",
+    "phone": "555-3456",
+    "website": "https://timbuktutours.com",
+    "image": "tours.jpg",
+    "membership": 2,
+    "description": "Guided tours and travel packages."
+  },
+  {
+    "name": "Bright Minds Academy",
+    "address": "202 Learning Ln",
+    "phone": "555-7890",
+    "website": "https://brightminds.edu",
+    "image": "academy.jpg",
+    "membership": 3,
+    "description": "Private school with STEM focus."
+  },
+  {
+    "name": "Urban Threads",
+    "address": "303 Fashion Ave",
+    "phone": "555-2345",
+    "website": "https://urbanthreads.com",
+    "image": "threads.jpg",
+    "membership": 1,
+    "description": "Trendy clothing and accessories."
+  },
+  {
+    "name": "WellSpring Spa",
+    "address": "404 Relaxation St",
+    "phone": "555-6789",
+    "website": "https://wellspringspa.com",
+    "image": "spa.jpg",
+    "membership": 2,
+    "description": "Massage, wellness, and beauty services."
+  }
+]
+
