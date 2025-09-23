@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Tech Solutions Ltd",
+    "logo": "images/logo1.png",
+    "phone": "+234-801-234-5678",
+    "address": "123 Business St, Lagos",
+    "website": "https://techsolutions.com",
+    "membershipLevel": "Gold"
+  },
+  {
+    "name": "Green Farms",
+    "logo": "images/logo2.png",
+    "phone": "+234-802-987-6543",
+    "address": "45 Market Rd, Lagos",
+    "website": "https://greenfarms.com",
+    "membershipLevel": "Silver"
+  },
+  {
+    "name": "Bright Future Academy",
+    "logo": "images/logo3.png",
+    "phone": "+234-803-555-6789",
+    "address": "10 Education Ave, Lagos",
+    "website": "https://brightfuture.edu",
+    "membershipLevel": "Bronze"
+  }
+]
+

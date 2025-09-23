@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kowes Plaza Chamber of Commerce - Supporting Local Business Growth" />
+  <meta name="author" content="Tochukwu Carl-Mbanefo" />
+  <title>ASABA CITY Chamber of Commerce</title>
+
+  <!-- Social Media Meta -->
+  <meta property="og:title" content="ASABA CITY Chamber of Commerce" />
+  <meta property="og:description" content="Welcome to the Asaba City Chamber of Commerce. Connecting businesses and communities Explore events, business directories, and join the local economic movement." />
+  <meta property="og:image" content="images/social-preview.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/index.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt=" Kowes Plaza Chamber Logo" />
+      <h1>Asaba City Chamber of Commerce</h1>
+    </div>
+
+    <button id="hamburger" aria-label="Toggle Navigation">☰</button>
+
+
+    <nav id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="#">Join</a></li>
+        <li><a href="#">Discover</a></li>
+      </ul>
+    </nav>
+
+    <button class="cta">Keynote Tickets</button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="images/hero.jpg" alt="Chamber Hero">
+    <div class="hero-text">
+      <h1>Welcome to [Your City] Chamber of Commerce</h1>
+      <p>Supporting local businesses and strengthening our community.</p>
+      <a href="join.html" class="cta-btn">Join the Chamber</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Events -->
+    <section class="events">
+      <h2>Upcoming Events</h2>
+      <article>
+        <h3>Business Networking Breakfast</h3>
+        <p>October 15, 2025 – 7:30 AM</p>
+        <p>Location: Community Hall</p>
+      </article>
+      <article>
+        <h3>Small Business Workshop</h3>
+        <p>October 22, 2025 – 5:00 PM</p>
+        <p>Location: Chamber Office</p>
+      </article>
+    </section>
+
+    <!-- Weather -->
+    <section class="weather">
+      <h2>Local Weather</h2>
+      <div id="current-weather"></div>
+      <div id="forecast"></div>
+    </section>
+
+    <!-- Spotlights -->
+    <section class="spotlights">
+      <h2>Business Spotlights</h2>
+      <div id="spotlight-container" class="spotlight-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contact">
+      <p>📍 10 Rue De La Paix, Timbuktu, MA 0198</p>
+      <p>📧 info@Kowesplazachamber.org</p>
+      <p>🌐 Kowesplazachamber.org</p>
+      <p>📞 (223) 555-3200</p>
+    </div>
+    <div class="social">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+    </div>
+    <div>
+    <p>WD0231 Class Project | Tochukwu Carl-Mbanefo</p>
+    <p>&copy; <span id="year"></span> Kowes Plaza Chamber of Commerce</p>
+    <p>Last Updated: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+  <script src="scripts/wheather.js"></script>
+  <script src="scripts/spotlight.js"></script>
+</body>
+</html>
+
