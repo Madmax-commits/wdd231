@@ -165,3 +165,41 @@ footer .social a {
     height: 500px;
   }
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #004080;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+header nav a {
+  color: #fff;
+  text-decoration: none;
+}
+header nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.view-toggle{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 2px;
+    padding-bottom: 8px;
+}
