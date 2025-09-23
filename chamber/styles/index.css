@@ -203,3 +203,21 @@ header nav a.active {
     padding-top: 2px;
     padding-bottom: 8px;
 }
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding-top: 80px; /* same as header height */
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #004080;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
