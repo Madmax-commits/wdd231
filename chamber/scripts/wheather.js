@@ -1,4 +1,4 @@
-const apiKey = "5fa35aef0fdf4b2467fba30a5c65e431"; // Consider moving to backend
+const apiKey = "5fa35aef0fdf4b2467fba30a5c65e431";
 const city = "Asaba,NG";
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
@@ -13,12 +13,10 @@ async function getWeather() {
     const weatherEl = document.getElementById("current-weather");
     if (weatherEl) {
       weatherEl.innerHTML = `
-        <div class="weather-card">
-          <h3>${data.name}</h3>
-          <p class="temp">${Math.round(data.main.temp)}°C</p>
-          <p class="desc">${data.weather[0].description}</p>
-          <p class="feels">Feels like: ${Math.round(data.main.feels_like)}°C</p>
-        </div>
+        <h3>${data.name}</h3>
+        <div class="temp">${Math.round(data.main.temp)}°C</div>
+        <div class="desc">${data.weather[0].description}</div>
+        <div class="feels">Feels like: ${Math.round(data.main.feels_like)}°C</div>
       `;
     }
 
@@ -35,11 +33,16 @@ async function getWeather() {
         .slice(0, 3);
       
       filtered.forEach(day => {
-        const date = new Date(day.dt_txt).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+        const date = new Date(day.dt_txt).toLocaleDateString("en-US", { 
+          weekday: "short", 
+          month: "short", 
+          day: "numeric" 
+        });
         forecastEl.innerHTML += `
           <div class="forecast-day">
             <p><strong>${date}</strong></p>
-            <p>${Math.round(day.main.temp)}°C - ${day.weather[0].description}</p>
+            <p>${Math.round(day.main.temp)}°C</p>
+            <p>${day.weather[0].description}</p>
           </div>
         `;
       });
@@ -48,7 +51,7 @@ async function getWeather() {
     console.error("Weather fetch error:", err);
     const weatherEl = document.getElementById("current-weather");
     if (weatherEl) {
-      weatherEl.innerHTML = `<p style="color:red;">Unable to load weather. Please try again later.</p>`;
+      weatherEl.innerHTML = `<p style="color:red;">Unable to load weather data.</p>`;
     }
   }
 }
@@ -59,5 +62,4 @@ if (document.readyState === "loading") {
 } else {
   getWeather();
 }
-getWeather();
 
