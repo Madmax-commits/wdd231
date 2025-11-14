@@ -90,7 +90,9 @@ nav a:hover, nav a.active{background:rgba(255,255,255,0.06);transform:translateY
   box-shadow: 0 6px 12px rgba(2,6,23,0.06);
   font-size:.95rem;
 }
-
+.loc-text{
+  text-align: center;
+}
 .hero-location .loc-icon{font-size:1.05rem;line-height:1}
 .hero-location .loc-map{
   margin-left:.6rem;
