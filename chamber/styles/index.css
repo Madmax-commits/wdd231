@@ -72,6 +72,41 @@ nav a:hover, nav a.active{background:rgba(255,255,255,0.06);transform:translateY
 .hero p{color:var(--glass);margin-bottom:1rem;font-size:1rem;max-width:70ch;margin-left:auto;margin-right:auto}
 .hero .cta-btn{display:inline-block}
 
+
+/* ...existing code... */
+/* Hero location pill */
+.hero-location{
+  margin: .6rem auto 0;
+  display:inline-flex;
+  gap:.5rem;
+  align-items:center;
+  background: rgba(255,255,255,0.08);
+  padding:.45rem .7rem;
+  border-radius:999px;
+  font-weight:600;
+  color: #fff;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 6px 12px rgba(2,6,23,0.06);
+  font-size:.95rem;
+}
+
+.hero-location .loc-icon{font-size:1.05rem;line-height:1}
+.hero-location .loc-map{
+  margin-left:.6rem;
+  background:rgba(255,255,255,0.12);
+  color:#fff;
+  padding:.25rem .5rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:.85rem;
+}
+.hero-location .loc-map:hover{transform:translateY(-2px)}
+@media (max-width:420px){
+  .hero-location{font-size:.9rem;padding:.4rem .6rem}
+  .hero-location .loc-map{display:none}
+}
+/* ...existing code... */
 /* Main layout */
 main{padding:2.25rem 0}
 .section{padding:1.25rem;margin:0 1rem;background:transparent}
