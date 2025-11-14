@@ -48,8 +48,20 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero"
-    style="background-image: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.25)), url('images/coins-1726618.jpg');">
+   <section class="hero">
+    <picture>
+      <source srcset="images/coins-1726618-1600.webp 1600w, images/coins-1726618-800.webp 800w" type="image/webp">
+      <source srcset="images/coins-1726618-1600.jpg 1600w, images/coins-1726618-800.jpg 800w" type="image/jpeg">
+      <img
+        class="hero-lcp"
+        src="images/coins-1726618.webp"
+        alt="Hands holding coins — support local business"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async"
+        sizes="(max-width: 600px) 800px, 1600px"
+      />
+    </picture>
     <div class="hero-wrap">
       <h1>Welcome to Konwea Chamber of Commerce</h1>
       <p>Supporting local businesses and strengthening our community.</p>
@@ -156,6 +168,15 @@
   <script src="scripts/wheather.js"></script>
   <script src="scripts/spotlight.js"></script>
   <script src="scripts/directory.js"></script>
+
+  <!-- Register simple service worker for caching repeat visits -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker?.register('sw.js').catch(()=>{/*sw reg failed*/});
+      });
+    }
+  </script>
 </body>
 
 </html>

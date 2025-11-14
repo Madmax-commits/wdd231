@@ -63,3 +63,23 @@ if (document.readyState === "loading") {
   getWeather();
 }
 
+// ...existing code...
+async function getWeather() {
+  try {
+    // existing fetch logic
+  } catch (err) {
+    // existing error handling
+  }
+}
+
+// run after the page fully loads or when the browser is idle
+function scheduleWeatherLoad() {
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(getWeather, { timeout: 2000 });
+  } else {
+    // ensure it does not block LCP: run on load
+    window.addEventListener('load', getWeather, { once: true });
+  }
+}
+
+scheduleWeatherLoad();
