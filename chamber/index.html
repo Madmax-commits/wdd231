@@ -170,7 +170,7 @@
   <script src="scripts/directory.js"></script>
 
   <!-- Register simple service worker for caching repeat visits -->
-  <script>
+   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker?.register('sw.js').catch(()=>{/*sw reg failed*/});

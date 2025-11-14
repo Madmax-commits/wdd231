@@ -56,6 +56,7 @@ nav a:hover, nav a.active{background:rgba(255,255,255,0.06);transform:translateY
 }
 /* make the <img> behave like a background-cover */
 .hero .hero-lcp {
+  display: block !important;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -63,15 +64,9 @@ nav a:hover, nav a.active{background:rgba(255,255,255,0.06);transform:translateY
   object-fit: cover;
   object-position: center;
   z-index: 0;
-  filter: brightness(0.7);
+  filter: brightness(0.65);
 }
-.hero::before{
-  content:"";
-  position:absolute;inset:0;
-  background:linear-gradient(90deg, rgba(0,77,64,0.35), rgba(255,179,0,0.12));
-  mix-blend-mode:soft-light;
-  pointer-events:none;
-}
+
 /* ensure hero content sits above the image */
 .hero-wrap {
   position: relative;
@@ -79,6 +74,9 @@ nav a:hover, nav a.active{background:rgba(255,255,255,0.06);transform:translateY
   padding: 2rem;
   text-align: center;
   color: #fff;
+}
+.hero img {
+  display: block !important;
 }
 .hero h1{font-size:clamp(1.6rem,3.8vw,2.6rem);margin-bottom:.6rem;line-height:1.05;font-weight:800}
 .hero p{color:var(--glass);margin-bottom:1rem;font-size:1rem;max-width:70ch;margin-left:auto;margin-right:auto}
@@ -971,3 +969,34 @@ img{max-width:100%;height:auto;display:block}
 }
 
 /* ========== END WEATHER SECTION ========== */
+.hero .hero-lcp {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.65);
+}
+ .header-inner {
+    justify-content: flex-start;
+    padding-left: 0.75rem;
+  }
+
+  .logo {
+    margin-right: 0.5rem;
+  }
+
+  /* hide CTA on very small screens to avoid overlap */
+  .cta {
+    display: none;
+  }
+
+  /* ensure nav dropdown covers full width when opened */
+  nav ul {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
