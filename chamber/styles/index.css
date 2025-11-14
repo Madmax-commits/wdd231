@@ -216,7 +216,7 @@ footer .footer-contact {
 /* Social icons row (right aligned by default) */
 footer .social {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   align-items: center;
   justify-content: flex-end;
 }
