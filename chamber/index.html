@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kowes Plaza Chamber of Commerce - Supporting Local Business Growth" />
+  <meta name="description" content="Konwea Shopping Plaza Chamber of Commerce - Supporting Local Business Growth and Community Development" />
   <meta name="author" content="Tochukwu Carl-Mbanefo" />
-  <title>ASABA CITY Chamber of Commerce</title>
+  <title>Konwea Chamber of Commerce | Asaba, Delta State</title>
 
   <!-- Social Media Meta -->
-  <meta property="og:title" content="ASABA CITY Chamber of Commerce" />
-  <meta property="og:description" content="Welcome to the Asaba City Chamber of Commerce. Connecting businesses and communities Explore events, business directories, and join the local economic movement." />
+  <meta property="og:title" content="Konwea Shopping Plaza Chamber of Commerce" />
+  <meta property="og:description" content="Welcome to Konwea Chamber of Commerce. Connecting businesses and communities. Explore events, business directories, and join the local economic movement." />
   <meta property="og:image" content="images/social-preview.jpg" />
   <meta property="og:url" content="https://yourdomain.com" />
 
@@ -18,41 +18,40 @@
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="images/logo.png" alt=" Kowes Plaza Chamber Logo" />
-      <h1>Konwea's Chamber of Commerce</h1>
+    <div class="header-inner">
+      <div class="logo">
+        <img src="images/logo.png" alt="Konwea Chamber Logo" />
+        <span class="brand">Konwea Chamber</span>
+      </div>
+
+      <button id="hamburger" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav id="navMenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+
+      <button class="cta">Tickets</button>
     </div>
-
-    <button id="hamburger" aria-label="Toggle Navigation">☰</button>
-
-
-    <nav id="navMenu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="#">Join</a></li>
-        <li><a href="#">Discover</a></li>
-      </ul>
-    </nav>
-
-    <button class="cta">Keynote Tickets</button>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <img src="images/hero.jpg" alt="Chamber Hero">
-    <div class="hero-text">
-      <h1>Welcome to Konwea Shopping Plaza Chamber of Commerce</h1>
+  <section class="hero" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.25)), url('images/hero.jpg');">
+    <div class="hero-wrap">
+      <h1>Welcome to Konwea Chamber of Commerce</h1>
       <p>Supporting local businesses and strengthening our community.</p>
-         <!-- New: location inside hero -->
+      
       <p class="hero-location" aria-label="Location">
-        <span class="loc-icon" aria-hidden="true"> ⌂⌂ </span>
-        <span class="loc-text">289 Nnebisi Road, Umuagu, Asaba 320242, Delta State</span>
-        <a class="loc-map" href="https://maps.app.goo.gl/FW7i7tnM6qPNmUtB8" target="_blank" rel="noopener">View map</a>
+        <span class="loc-icon" aria-hidden="true">📍</span>
+        <span class="loc-text">289 Nnebisi Road, Asaba, Delta State</span>
+        <a class="loc-map" href="https://maps.app.goo.gl/FW7i7tnM6qPNmUtB8" target="_blank" rel="noopener noreferrer">View map</a>
       </p>
-      <p>
-          <a href="join.html" class="cta-btn">Join the Chamber</a>
-      </p>
+
+      <a href="join.html" class="cta-btn">Join the Chamber</a>
     </div>
   </section>
 
@@ -62,14 +61,29 @@
     <section class="events">
       <h2>Upcoming Events</h2>
       <article>
-        <h3>Business Networking Breakfast</h3>
-        <p>October 15, 2025 – 7:30 AM</p>
-        <p>Location: Community Hall</p>
+        <div class="meta">
+          <span class="date">October 15, 2025</span>
+          <span class="time">7:30 AM</span>
+          <span class="place">Community Hall</span>
+        </div>
+        <div class="content">
+          <h3>Business Networking Breakfast</h3>
+          <p>Connect with local business leaders and entrepreneurs over breakfast.</p>
+          <a href="#" class="event-cta">Learn More</a>
+        </div>
       </article>
+
       <article>
-        <h3>Small Business Workshop</h3>
-        <p>October 22, 2025 – 5:00 PM</p>
-        <p>Location: Chamber Office</p>
+        <div class="meta">
+          <span class="date">October 22, 2025</span>
+          <span class="time">5:00 PM</span>
+          <span class="place">Chamber Office</span>
+        </div>
+        <div class="content">
+          <h3>Small Business Workshop</h3>
+          <p>Expert tips for growing your small business in the digital age.</p>
+          <a href="#" class="event-cta">Register</a>
+        </div>
       </article>
     </section>
 
@@ -82,31 +96,49 @@
 
     <!-- Spotlights -->
     <section class="spotlights">
-      <h2>Business Spotlights</h2>
+      <h2>Featured Businesses</h2>
       <div id="spotlight-container" class="spotlight-grid"></div>
     </section>
   </main>
 
   <footer>
-    <div class="contact">
-      <p>📍 289 Nnebisi Road, Umuagu, Asaba 320242, Delta State</p>
-      <p>📧 info@Kowesplazachamber.org</p>
-      <p>🌐 Kowesplazachamber.org</p>
-      <p>📞 (223) 555-3200</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand">Konwea Chamber</span>
+        <p>Building stronger business connections in Delta State.</p>
+      </div>
+
+      <div class="footer-contact">
+        <p><strong>Contact:</strong></p>
+        <p>📍 289 Nnebisi Road, Asaba</p>
+        <p>📧 info@konweachamber.org</p>
+        <p>📞 (234) 555-3200</p>
+      </div>
+
+      <div class="footer-links">
+        <p><strong>Quick Links:</strong></p>
+        <a href="index.html">Home</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html">Join</a>
+        <a href="discover.html">Discover</a>
+      </div>
+
+      <div class="social">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      </div>
     </div>
-    <div class="social">
-      <a href="#">Facebook</a>
-      <a href="#">Twitter</a>
-      <a href="#">LinkedIn</a>
-    </div>
-    <div>
-    <p>WD0231 Class Project | Tochukwu Carl-Mbanefo</p>
-    <p>&copy; <span id="year"></span> Kowes Plaza Chamber of Commerce</p>
-    <p>Last Updated: <span id="lastModified"></span></p>
+
+    <div class="footer-bottom">
+      <p>WD0231 Class Project | Tochukwu Carl-Mbanefo</p>
+      <p>&copy; <span id="year"></span> Konwea Chamber of Commerce</p>
+      <p>Last Updated: <span id="lastModified"></span></p>
     </div>
   </footer>
-  <script src="scripts/wheather.js"></script>
+
+  <script src="scripts/weather.js"></script>
   <script src="scripts/spotlight.js"></script>
+  <script src="scripts/directory.js"></script>
 </body>
 </html>
-

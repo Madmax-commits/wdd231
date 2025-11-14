@@ -150,13 +150,35 @@ main{padding:2.25rem 0}
 
 /* ---------- Standard Footer CSS ---------- */
 /* main footer wrapper */
+/* Footer color contrast improvements */
 footer {
   width: 100%;
-  background: linear-gradient(180deg, rgba(0,77,64,0.95), rgba(0,30,24,0.95));
-  color: rgba(255,255,255,0.95);
+  background: linear-gradient(180deg, rgba(0,77,64,0.98), rgba(0,30,24,0.98));
+  color: #ffffff; /* Changed from rgba for better contrast */
   padding: 3rem 1rem;
   box-shadow: 0 -6px 30px rgba(2,6,23,0.06);
-  border-top: 1px solid rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+footer .footer-brand p,
+footer .footer-contact p,
+footer .footer-links a {
+  color: #ffffff; /* AA compliant contrast ratio */
+}
+
+footer .footer-bottom p {
+  color: #ffffff;
+}
+
+footer .social a {
+  color: #ffffff;
+  background: rgba(255,179,0,0.15);
+}
+
+footer .social a:hover,
+footer .social a:focus {
+  background: var(--accent);
+  color: #071019;
 }
 
 /* inner container: centers content and defines columns */
