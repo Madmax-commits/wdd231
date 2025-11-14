@@ -440,6 +440,7 @@ img{max-width:100%;height:auto;display:block}
 /* ========== MOBILE-FIRST RESPONSIVE DESIGN ========== */
 
 /* Base: Small screens (phones) - 320px to 480px */
+/* Base: Small screens (phones) - 320px to 480px */
 @media (max-width: 480px) {
   :root {
     --header-height: 56px;
@@ -458,6 +459,7 @@ img{max-width:100%;height:auto;display:block}
     width: 100%;
     padding: 0;
     flex: 1;
+    justify-content: flex-start;
   }
 
   .logo {
@@ -542,12 +544,13 @@ img{max-width:100%;height:auto;display:block}
     cursor: pointer;
     order: 2;
     flex-shrink: 0;
+    margin-left: auto; /* Pushes to the right */
   }
 
   .cta {
     display: none;
   }
-
+}
   /* Hero mobile */
   .hero {
     margin-top: 0;
@@ -667,7 +670,7 @@ img{max-width:100%;height:auto;display:block}
   h2 {
     font-size: 1rem;
   }
-}
+
 
 /* Small tablets (481px - 600px) */
 @media (min-width: 481px) and (max-width: 600px) {
@@ -696,7 +699,7 @@ img{max-width:100%;height:auto;display:block}
     position: absolute;
     top: var(--header-height);
     left: 0;
-    right: 0;
+   right: 0;
     width: 100%;
   }
 
