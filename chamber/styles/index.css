@@ -12,8 +12,13 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
   font-family: var(--font-family);
   background-color: var(--background-color);
   color: var(--text-color);
@@ -29,7 +34,10 @@ header {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  width: 100%;
 }
+
+
 
 .logo {
   display: flex;
