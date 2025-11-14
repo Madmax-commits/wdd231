@@ -108,7 +108,7 @@ nav a.active {
   position: relative;
   text-align: center;
   color: white;
-  padding: 2rem;
+  padding: 0;
   background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
 
