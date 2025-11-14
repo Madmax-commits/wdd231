@@ -78,6 +78,7 @@ nav a:hover, nav a.active{background:rgba(255,255,255,0.06);transform:translateY
 .hero-location{
   margin: .6rem auto 0;
   display:inline-flex;
+  text-align: center;
   gap:.5rem;
   align-items:center;
   background: rgba(255,255,255,0.08);
