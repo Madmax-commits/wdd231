@@ -431,3 +431,119 @@ img{max-width:100%;height:auto;display:block}
   .events h2{font-size:1.2rem}
 }
 /* ...existing code... */
+
+
+
+/* Weather Section */
+.weather {
+  margin: 0 1rem 2.25rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.weather h2 {
+  grid-column: 1 / -1;
+  font-size: 1.35rem;
+  margin: 0 0 .5rem;
+  color: var(--primary);
+  letter-spacing: .4px;
+}
+
+/* Current weather card */
+#current-weather {
+  grid-column: 1 / -1;
+}
+
+.weather-card {
+  padding: 1.5rem;
+  background: linear-gradient(180deg, var(--card), #fbfbfd);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(12,18,26,0.06);
+  border: 1px solid rgba(15,23,36,0.04);
+  text-align: center;
+}
+
+.weather-card h3 {
+  margin: 0 0 .5rem;
+  font-size: 1.2rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.weather-card .temp {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0.5rem 0;
+}
+
+.weather-card .desc {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: capitalize;
+  margin: 0.5rem 0;
+}
+
+.weather-card .feels {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0.5rem 0;
+}
+
+/* Forecast section */
+#forecast {
+  grid-column: 1 / -1;
+}
+
+#forecast h3 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.forecast-day {
+  padding: 1rem;
+  background: linear-gradient(180deg, #fff, #fcfcfe);
+  border-radius: 10px;
+  border: 1px solid rgba(15,23,36,0.03);
+  text-align: center;
+}
+
+.forecast-day p {
+  margin: 0.3rem 0;
+  color: var(--text);
+}
+
+.forecast-day p strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Responsive forecast grid */
+@media (min-width: 760px) {
+  #forecast {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  #forecast h3 {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 420px) {
+  .weather-card .temp {
+    font-size: 2rem;
+  }
+  
+  .weather {
+    margin: 0 0.5rem 2.25rem;
+    padding: 0.75rem;
+  }
+}
+
+/* ...existing code... */
