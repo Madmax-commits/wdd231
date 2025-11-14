@@ -246,16 +246,24 @@ footer .social a:focus {
 
 /* bottom row spanning full width */
 footer .footer-bottom {
+  grid-column: 1 / -1;
   max-width: var(--max-width);
   margin: 1.25rem auto 0;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   color: rgba(255,255,255,0.75);
   font-size: 0.9rem;
   border-top: 1px solid rgba(255,255,255,0.03);
   padding-top: 0.85rem;
+}
+
+footer .footer-bottom p {
+  margin: 0;
+  color: rgba(255,255,255,0.75);
 }
 
 /* small helper styles */
