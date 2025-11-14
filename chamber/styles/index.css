@@ -452,16 +452,17 @@ img{max-width:100%;height:auto;display:block}
     padding: 0.5rem 0.75rem;
     justify-content: space-between;
     gap: 0.5rem;
+    display: flex;
+    align-items: center;
   }
 
-  .header-inner {
+ .header-inner {
     gap: 0.35rem;
-    width: 100%;
+    width: auto;
     padding: 0;
-    flex: 1;
+    flex: 0 1 auto;
     justify-content: flex-start;
   }
-
   .logo {
     gap: 0.4rem;
     flex: 0 1 auto;
@@ -483,9 +484,8 @@ img{max-width:100%;height:auto;display:block}
   }
 
   /* Navigation mobile */
-  nav {
-    order: 3;
-    width: 100%;
+ nav {
+    display: none;
   }
 
   nav ul {
