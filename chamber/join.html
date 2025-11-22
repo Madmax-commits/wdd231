@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join Konwea Chamber of Commerce - Membership Application" />
+  <meta name="author" content="Tochukwu Carl-Mbanefo" />
+  <title>Join | Konwea Chamber of Commerce</title>
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/join.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <img src="images/logo.png" alt="Konwea Chamber Logo" />
+        <span class="brand">Konwea Chamber</span>
+      </div>
+
+      <button id="hamburger" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav id="navMenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html" class="active">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+
+      <button class="cta">Tickets</button>
+    </div>
+  </header>
+
+  <main class="join-main">
+    <!-- Hero section for join page -->
+    <section class="join-hero">
+      <h1>Join Konwea Chamber of Commerce</h1>
+      <p>Grow your business with networking, resources, and community support</p>
+    </section>
+
+    <!-- Form and membership cards container -->
+    <section class="join-container">
+      <!-- Membership cards (responsive: below form on mobile, right on desktop) -->
+      <aside class="membership-cards">
+        <h2>Membership Levels</h2>
+
+        <!-- NP Membership Card -->
+        <div class="membership-card np-card" data-level="np">
+          <h3>NP Membership</h3>
+          <p class="price">Free</p>
+          <p class="description">For non-profit organizations</p>
+          <button class="learn-btn" aria-label="Learn more about NP Membership" data-modal="modal-np">
+            Learn More
+          </button>
+        </div>
+
+        <!-- Bronze Membership Card -->
+        <div class="membership-card bronze-card" data-level="bronze">
+          <h3>Bronze Membership</h3>
+          <p class="price">₦50,000/year</p>
+          <p class="description">Perfect for growing businesses</p>
+          <button class="learn-btn" aria-label="Learn more about Bronze Membership" data-modal="modal-bronze">
+            Learn More
+          </button>
+        </div>
+
+        <!-- Silver Membership Card -->
+        <div class="membership-card silver-card" data-level="silver">
+          <h3>Silver Membership</h3>
+          <p class="price">₦100,000/year</p>
+          <p class="description">Enhanced visibility & benefits</p>
+          <button class="learn-btn" aria-label="Learn more about Silver Membership" data-modal="modal-silver">
+            Learn More
+          </button>
+        </div>
+
+        <!-- Gold Membership Card -->
+        <div class="membership-card gold-card" data-level="gold">
+          <h3>Gold Membership</h3>
+          <p class="price">₦200,000/year</p>
+          <p class="description">Premium support & exposure</p>
+          <button class="learn-btn" aria-label="Learn more about Gold Membership" data-modal="modal-gold">
+            Learn More
+          </button>
+        </div>
+      </aside>
+
+      <!-- Form -->
+      <section class="form-section">
+        <form method="get" action="thankyou.html" class="membership-form">
+          <fieldset>
+            <legend>Applicant Information</legend>
+
+            <!-- First Name -->
+            <div class="form-group">
+              <label for="firstName">
+                First Name
+                <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                title="Enter your first name"
+                autocomplete="given-name"
+                required
+              />
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+              <label for="lastName">
+                Last Name
+                <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                title="Enter your last name"
+                autocomplete="family-name"
+                required
+              />
+            </div>
+
+            <!-- Organizational Title -->
+            <div class="form-group">
+              <label for="orgTitle">
+                Your Title
+              </label>
+              <input
+                type="text"
+                id="orgTitle"
+                name="orgTitle"
+                title="Enter your organizational title (minimum 7 characters, letters, hyphens, and spaces only)"
+                autocomplete="organization-title"
+                pattern="^[a-zA-Z\-\s]{7,}$"
+                placeholder="e.g., Business Manager"
+              />
+              <small>Minimum 7 characters (letters, hyphens, and spaces)</small>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">
+                Email Address
+                <span class="required">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                title="Enter a valid email address"
+                autocomplete="email"
+                placeholder="example@business.com"
+                required
+              />
+            </div>
+
+            <!-- Mobile Phone -->
+            <div class="form-group">
+              <label for="phone">
+                Mobile Number
+                <span class="required">*</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                title="Enter your mobile phone number"
+                autocomplete="tel"
+                required
+              />
+            </div>
+
+            <!-- Organization/Business Name -->
+            <div class="form-group">
+              <label for="businessName">
+                Business/Organization Name
+                <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="businessName"
+                name="businessName"
+                title="Enter your business or organization name"
+                autocomplete="organization"
+                required
+              />
+            </div>
+
+            <!-- Membership Level Selection -->
+            <div class="form-group">
+              <label for="membershipLevel">
+                Membership Level
+                <span class="required">*</span>
+              </label>
+              <select id="membershipLevel" name="membershipLevel" title="Select your membership level" required>
+                <option value="">-- Select a membership level --</option>
+                <option value="np">NP Membership (Free)</option>
+                <option value="bronze">Bronze Membership (₦50,000/year)</option>
+                <option value="silver">Silver Membership (₦100,000/year)</option>
+                <option value="gold">Gold Membership (₦200,000/year)</option>
+              </select>
+            </div>
+
+            <!-- Business Description -->
+            <div class="form-group">
+              <label for="description">
+                Business Description
+              </label>
+              <textarea
+                id="description"
+                name="description"
+                title="Describe your business or organization"
+                rows="4"
+                placeholder="Tell us about your business..."
+              ></textarea>
+            </div>
+
+            <!-- Timestamp (Hidden) -->
+            <input
+              type="hidden"
+              id="timestamp"
+              name="timestamp"
+            />
+          </fieldset>
+
+          <!-- Submit Button -->
+          <button type="submit" class="submit-btn">
+            Submit Application
+          </button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <!-- MODALS -->
+
+  <!-- NP Membership Modal -->
+  <dialog id="modal-np" class="membership-modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <h2>NP Membership Benefits</h2>
+      <ul>
+        <li>✓ Access to member directory</li>
+        <li>✓ Networking events (quarterly)</li>
+        <li>✓ Community announcements</li>
+        <li>✓ Basic business resources</li>
+        <li>✓ Non-profit forum access</li>
+      </ul>
+      <p class="modal-price">Cost: Free</p>
+      <button class="modal-cta" onclick="document.getElementById('membershipLevel').value='np'; document.getElementById('modal-np').close();">
+        Select NP Membership
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Bronze Membership Modal -->
+  <dialog id="modal-bronze" class="membership-modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <h2>Bronze Membership Benefits</h2>
+      <ul>
+        <li>✓ All NP benefits</li>
+        <li>✓ Business spotlight (quarterly)</li>
+        <li>✓ Event discounts (10%)</li>
+        <li>✓ Training workshops</li>
+        <li>✓ Basic advertising</li>
+        <li>✓ Member support hotline</li>
+      </ul>
+      <p class="modal-price">Cost: ₦50,000/year</p>
+      <button class="modal-cta" onclick="document.getElementById('membershipLevel').value='bronze'; document.getElementById('modal-bronze').close();">
+        Select Bronze Membership
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Silver Membership Modal -->
+  <dialog id="modal-silver" class="membership-modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <h2>Silver Membership Benefits</h2>
+      <ul>
+        <li>✓ All Bronze benefits</li>
+        <li>✓ Featured spotlight (monthly)</li>
+        <li>✓ Event discounts (20%)</li>
+        <li>✓ Exclusive webinars</li>
+        <li>✓ Premium advertising</li>
+        <li>✓ Social media promotion</li>
+        <li>✓ Dedicated liaison</li>
+      </ul>
+      <p class="modal-price">Cost: ₦100,000/year</p>
+      <button class="modal-cta" onclick="document.getElementById('membershipLevel').value='silver'; document.getElementById('modal-silver').close();">
+        Select Silver Membership
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Gold Membership Modal -->
+  <dialog id="modal-gold" class="membership-modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <h2>Gold Membership Benefits</h2>
+      <ul>
+        <li>✓ All Silver benefits</li>
+        <li>✓ Premium spotlight (weekly)</li>
+        <li>✓ Event discounts (30%)</li>
+        <li>✓ VIP events access</li>
+        <li>✓ Premium branding</li>
+        <li>✓ Priority listing</li>
+        <li>✓ Custom marketing support</li>
+        <li>✓ Annual business consultation</li>
+      </ul>
+      <p class="modal-price">Cost: ₦200,000/year</p>
+      <button class="modal-cta" onclick="document.getElementById('membershipLevel').value='gold'; document.getElementById('modal-gold').close();">
+        Select Gold Membership
+      </button>
+    </div>
+  </dialog>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand">Konwea Chamber</span>
+        <p>Building stronger business connections in Delta State.</p>
+      </div>
+
+      <div class="footer-contact">
+        <p><strong>Contact:</strong></p>
+        <p>📍 289 Nnebisi Road, Asaba</p>
+        <p>📧 info@konweachamber.org</p>
+        <p>📞 (234) 555-3200</p>
+      </div>
+
+      <div class="footer-links">
+        <p><strong>Quick Links:</strong></p>
+        <a href="index.html">Home</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html">Join</a>
+        <a href="discover.html">Discover</a>
+      </div>
+
+      <div class="social">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>WD0231 Class Project | Tochukwu Carl-Mbanefo</p>
+      <p>&copy; <span id="year"></span> Konwea Chamber of Commerce</p>
+      <p>Last Updated: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+  <script src="scripts/directory.js"></script>
+  <script src="scripts/join.js"></script>
+</body>
+</html>

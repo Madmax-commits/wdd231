@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Thank You - Konwea Chamber of Commerce Membership Application Submitted" />
+  <meta name="author" content="Tochukwu Carl-Mbanefo" />
+  <title>Thank You | Konwea Chamber of Commerce</title>
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/thankyou.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <img src="images/logo.png" alt="Konwea Chamber Logo" />
+        <span class="brand">Konwea Chamber</span>
+      </div>
+
+      <button id="hamburger" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav id="navMenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+
+      <button class="cta">Tickets</button>
+    </div>
+  </header>
+
+  <main class="thankyou-main">
+    <!-- Success message -->
+    <section class="thankyou-hero">
+      <div class="success-icon">✓</div>
+      <h1>Thank You!</h1>
+      <p>Your membership application has been submitted successfully.</p>
+    </section>
+
+    <!-- Submitted data -->
+    <section class="submitted-data">
+      <h2>Application Summary</h2>
+      <div class="data-cards">
+        <!-- First Name -->
+        <div class="data-card">
+          <h3>First Name</h3>
+          <p id="display-firstName">—</p>
+        </div>
+
+        <!-- Last Name -->
+        <div class="data-card">
+          <h3>Last Name</h3>
+          <p id="display-lastName">—</p>
+        </div>
+
+        <!-- Email -->
+        <div class="data-card">
+          <h3>Email Address</h3>
+          <p id="display-email">—</p>
+        </div>
+
+        <!-- Phone -->
+        <div class="data-card">
+          <h3>Mobile Number</h3>
+          <p id="display-phone">—</p>
+        </div>
+
+        <!-- Business Name -->
+        <div class="data-card">
+          <h3>Business/Organization</h3>
+          <p id="display-businessName">—</p>
+        </div>
+
+        <!-- Timestamp -->
+        <div class="data-card">
+          <h3>Submission Date & Time</h3>
+          <p id="display-timestamp">—</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next steps -->
+    <section class="next-steps">
+      <h2>What's Next?</h2>
+      <ol>
+        <li>We will review your application within 2-3 business days.</li>
+        <li>You will receive a confirmation email with membership details.</li>
+        <li>Check your inbox for login credentials to access member resources.</li>
+        <li>Attend our orientation session to get the most from your membership.</li>
+      </ol>
+    </section>
+
+    <!-- Call to action -->
+    <section class="thankyou-cta">
+      <a href="index.html" class="home-btn">Return to Home</a>
+      <a href="directory.html" class="directory-btn">View Member Directory</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand">Konwea Chamber</span>
+        <p>Building stronger business connections in Delta State.</p>
+      </div>
+
+      <div class="footer-contact">
+        <p><strong>Contact:</strong></p>
+        <p>📍 289 Nnebisi Road, Asaba</p>
+        <p>📧 info@konweachamber.org</p>
+        <p>📞 (234) 555-3200</p>
+      </div>
+
+      <div class="footer-links">
+        <p><strong>Quick Links:</strong></p>
+        <a href="index.html">Home</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html">Join</a>
+        <a href="discover.html">Discover</a>
+      </div>
+
+      <div class="social">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>WD0231 Class Project | Tochukwu Carl-Mbanefo</p>
+      <p>&copy; <span id="year"></span> Konwea Chamber of Commerce</p>
+      <p>Last Updated: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+  <script src="scripts/directory.js"></script>
+  <script src="scripts/thankyou.js"></script>
+</body>
+</html>
