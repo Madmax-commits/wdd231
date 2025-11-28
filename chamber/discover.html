@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Discover — Chamber</title>
+  <meta name="description" content="Discover 8 local highlights — museums, parks, markets and more. Learn about each place and plan your visit." />
+   <link rel="stylesheet" href="styles/discover.css" />
+  <link rel="stylesheet" href="styles/discover-css-medium.css" media="screen and (min-width: 641px)" />
+  <script type="module" src="scripts/discover.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Header / Navigation (semantic, responsive) -->
+  <header id="site-header" class="site-header" role="banner">
+    <div class="container header-inner">
+      <h1 class="site-title">Konwea Chamber of Commerce | DISCOVER</h1>
+
+      <button id="nav-toggle" aria-controls="main-nav" aria-expanded="false" class="nav-toggle">
+        <span class="sr-only">Open navigation menu</span>
+        ☰
+      </button>
+
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="discover.html" aria-current="page">Discover</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main-content" role="main" aria-labelledby="page-heading">
+    <section id="intro" class="intro">
+      <h2 id="page-heading">Discover Local Highlights</h2>
+      <p>Explore 8 curated items of interest in our area. Click "learn more" for details.</p>
+    </section>
+
+    <!-- Visit message area -->
+    <div id="visit-message" class="visit-message" aria-live="polite" role="status"></div>
+
+    <!-- Gallery grid container (cards inserted by JS) -->
+    <section id="discover-grid" class="discover-grid" aria-label="Discover items"></section>
+  </main>
+
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Chamber of Commerce — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple responsive nav toggling for accessibility / wayfinding
+    (function(){
+      const btn = document.getElementById('nav-toggle');
+      const nav = document.getElementById('main-nav');
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+    })();
+  </script>
+</body>
+</html>
+

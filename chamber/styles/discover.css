@@ -1,0 +1,401 @@
+/* css/styles.css - rubric-focused */
+
+/* Reset / box sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Accessible variables - Chamber brand colors */
+:root {
+    --bg: #f7f8fa;
+    --card-bg: #ffffff;
+    --text: #071019;
+    /* dark navy */
+    --muted: #5a6c7d;
+    /* slate gray */
+    --primary: #004d40;
+    /* deep teal/green */
+    --accent: #ffb300;
+    /* gold/amber */
+    --accent-hover: #ff9800;
+    /* darker gold */
+    --primary-hover: #003d32;
+    /* darker teal */
+    --gap: 1rem;
+    --container: 1200px;
+    --card-radius: 10px;
+}
+
+/* Base layout */
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.4;
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Skip link (visible on focus) */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0 0 1rem 0;
+    padding: .5rem .75rem;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Header / nav */
+.site-header {
+    background: #fff;
+    border-bottom: 2px solid var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+}
+
+.site-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.main-nav a {
+    display: inline-block;
+    padding: .5rem;
+    color: var(--text);
+    border-radius: 6px;
+    transition: all .2s ease;
+}
+
+.main-nav a:hover {
+    background: rgba(0, 77, 64, 0.06);
+    color: var(--primary);
+}
+
+.main-nav a[aria-current="page"] {
+    background: rgba(255, 179, 0, 0.1);
+    color: var(--accent);
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent);
+}
+
+/* Nav toggle for small screens */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.nav-toggle:focus {
+    outline: 3px solid var(--accent);
+    border-radius: 6px;
+}
+
+/* Intro */
+.intro {
+    margin: 1rem 0 0.5rem;
+}
+
+.intro h1 {
+    color: var(--primary);
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 0.5rem;
+}
+
+/* Visit message */
+.visit-message {
+    background: linear-gradient(90deg, rgba(0, 77, 64, 0.06), rgba(255, 179, 0, 0.03));
+    border-left: 4px solid var(--accent);
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0 1rem;
+    border-radius: 6px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* Discover grid */
+.discover-grid {
+    display: grid;
+    gap: var(--gap);
+    margin-bottom: 2rem;
+    align-items: start;
+    width: 100%;
+}
+
+/* Card design */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: 0 4px 12px rgba(0, 77, 64, 0.08);
+    border: 1px solid rgba(0, 77, 64, 0.05);
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    overflow: hidden;
+    transition: box-shadow .3s ease, transform .3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 24px rgba(0, 77, 64, 0.12);
+    transform: translateY(-2px);
+}
+
+.card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.card figure {
+    margin: 0 0 0.5rem;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    will-change: transform, filter;
+}
+
+.card address {
+    font-style: normal;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    font-size: 0.92rem;
+}
+
+.card p {
+    flex: 1;
+    margin: 0 0 0.75rem;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.card .actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.button {
+    background: var(--accent);
+    color: #071019;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all .2s ease;
+}
+
+.button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 179, 0, 0.2);
+}
+
+.button:focus {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Focus styles for keyboard users */
+.card:focus-within,
+.card:focus {
+    box-shadow: 0 0 0 3px rgba(0, 77, 64, 0.15);
+    outline: none;
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .card figure img {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* === GRID LAYOUTS (named grid areas) === */
+
+/* Small screens: single column */
+@media (max-width: 640px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .main-nav.open {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .discover-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "card5"
+            "card6"
+            "card7"
+            "card8";
+    }
+
+    .card figure img {
+        transition: none;
+        transform: none;
+        filter: none;
+    }
+}
+
+/* Medium screens: two columns */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .main-nav {
+        display: block;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .discover-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card8";
+    }
+
+    /* Hover effect available starting at medium */
+    .card figure img {
+        transition: transform 260ms ease, filter 260ms ease;
+    }
+
+    .card:hover figure img {
+        transform: scale(1.05) rotate(-0.3deg);
+        filter: brightness(1.03) saturate(1.05);
+    }
+}
+
+/* Large screens: 4 columns */
+@media (min-width: 1025px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "card1 card2 card3 card4"
+            "card5 card6 card7 card8";
+    }
+
+    .card figure img {
+        transition: transform 200ms ease, filter 200ms ease;
+    }
+
+    .card:hover figure img {
+        transform: scale(1.08) translateY(-6px);
+        filter: contrast(1.05) saturate(1.08) brightness(1.02);
+    }
+}
+
+/* assign grid-area via data-area (set by JS) */
+.card[data-area="card1"] {
+    grid-area: card1;
+}
+
+.card[data-area="card2"] {
+    grid-area: card2;
+}
+
+.card[data-area="card3"] {
+    grid-area: card3;
+}
+
+.card[data-area="card4"] {
+    grid-area: card4;
+}
+
+.card[data-area="card5"] {
+    grid-area: card5;
+}
+
+.card[data-area="card6"] {
+    grid-area: card6;
+}
+
+.card[data-area="card7"] {
+    grid-area: card7;
+}
+
+.card[data-area="card8"] {
+    grid-area: card8;
+}
+
+/* small utilities */
+.sr-only {
+    position: absolute !important;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
