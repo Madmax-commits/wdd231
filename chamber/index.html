@@ -15,8 +15,8 @@
     content="Welcome to Konwea Chamber of Commerce. Connecting businesses and communities. Explore events, business directories, and join the local economic movement." />
   <meta property="og:image" content="images/social-preview.jpg" />
   <meta property="og:url" content="https://yourdomain.com" />
-    <!-- Preconnect to API to shave connection time -->
- <link rel="preconnect" href="https://api.openweathermap.org" crossorigin>
+  <!-- Preconnect to API to shave connection time -->
+  <link rel="preconnect" href="https://api.openweathermap.org" crossorigin>
   <!-- Preload LCP hero image (use a WebP optimized variant if available) -->
   <link rel="preload" as="image" href="images/coins-1726618.webp" type="image/webp" />
 
@@ -48,19 +48,12 @@
   </header>
 
   <!-- Hero -->
-   <section class="hero">
+  <section class="hero">
     <picture>
       <source srcset="images/coins-1726618-1600.webp 1600w, images/coins-1726618-800.webp 800w" type="image/webp">
       <source srcset="images/coins-1726618-1600.jpg 1600w, images/coins-1726618-800.jpg 800w" type="image/jpeg">
-      <img
-        class="hero-lcp"
-        src="images/coins-1726618.webp"
-        alt="Hands holding coins — support local business"
-        fetchpriority="high"
-        loading="eager"
-        decoding="async"
-        sizes="(max-width: 600px) 800px, 1600px"
-      />
+      <img class="hero-lcp" src="images/coins-1726618.webp" alt="Hands holding coins — support local business"
+        fetchpriority="high" loading="eager" decoding="async" sizes="(max-width: 600px) 800px, 1600px" />
     </picture>
     <div class="hero-wrap">
       <h1>Welcome to Konwea Chamber of Commerce</h1>
@@ -165,15 +158,16 @@
     </div>
   </footer>
 
-  <script src="scripts/wheather.js"></script>
-  <script src="scripts/spotlight.js"></script>
-  <script src="scripts/directory.js"></script>
+  <!-- Defer all non-critical scripts -->
+  <script defer src="scripts/wheather.js"></script>
+  <script defer src="scripts/spotlight.js"></script>
+  <script defer src="scripts/directory.js"></script>
 
-  <!-- Register simple service worker for caching repeat visits -->
-   <script>
+  <!-- Register service worker for caching -->
+  <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker?.register('sw.js').catch(()=>{/*sw reg failed*/});
+        navigator.serviceWorker?.register('sw.js').catch(() => {/*sw reg failed*/ });
       });
     }
   </script>

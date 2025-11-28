@@ -8,7 +8,7 @@ async function getWeather() {
     // Current weather
     const res = await fetch(weatherUrl);
     if (!res.ok) throw new Error(`Weather API error: ${res.status}`);
-    
+
     const data = await res.json();
     const weatherEl = document.getElementById("current-weather");
     if (weatherEl) {
@@ -23,7 +23,7 @@ async function getWeather() {
     // Forecast (next 3 days at noon)
     const forecastRes = await fetch(forecastUrl);
     if (!forecastRes.ok) throw new Error(`Forecast API error: ${forecastRes.status}`);
-    
+
     const forecastData = await forecastRes.json();
     const forecastEl = document.getElementById("forecast");
     if (forecastEl) {
@@ -31,12 +31,12 @@ async function getWeather() {
       const filtered = forecastData.list
         .filter(f => f.dt_txt.includes("12:00:00"))
         .slice(0, 3);
-      
+
       filtered.forEach(day => {
-        const date = new Date(day.dt_txt).toLocaleDateString("en-US", { 
-          weekday: "short", 
-          month: "short", 
-          day: "numeric" 
+        const date = new Date(day.dt_txt).toLocaleDateString("en-US", {
+          weekday: "short",
+          month: "short",
+          day: "numeric"
         });
         forecastEl.innerHTML += `
           <div class="forecast-day">
@@ -51,35 +51,24 @@ async function getWeather() {
     console.error("Weather fetch error:", err);
     const weatherEl = document.getElementById("current-weather");
     if (weatherEl) {
-      weatherEl.innerHTML = `<p style="color:red;">Unable to load weather data.</p>`;
+      weatherEl.innerHTML = `<p style="color: red; padding: 1rem;">Unable to load weather. Please try again later.</p>`;
     }
   }
 }
 
-// Run on page load
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", getWeather);
-} else {
-  getWeather();
-}
-
-// ...existing code...
-async function getWeather() {
-  try {
-    // existing fetch logic
-  } catch (err) {
-    // existing error handling
-  }
-}
-
-// run after the page fully loads or when the browser is idle
+// Schedule weather to load after page is idle (doesn't block LCP)
 function scheduleWeatherLoad() {
   if ('requestIdleCallback' in window) {
-    requestIdleCallback(getWeather, { timeout: 2000 });
+    requestIdleCallback(getWeather, { timeout: 3000 });
   } else {
-    // ensure it does not block LCP: run on load
+    // Fallback: load on page load event
     window.addEventListener('load', getWeather, { once: true });
   }
 }
 
-scheduleWeatherLoad();
+// Run only after DOM is ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", scheduleWeatherLoad);
+} else {
+  scheduleWeatherLoad();
+}
