@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RIT Energy — Home</title>
+
+  <!-- Global head meta (specified) -->
+  <link rel="icon" href="images/logo_embedded.svg" type="image/svg" />
+  <meta name="author" content="Tochukwu Carl-Mbanefo Ayobami" />
+  <meta name="description" content="Modern tech solutions: web & mobile apps, HRM/CRM, AI media, automation." />
+  <meta property="og:title" content="RIT Energy Media & Tech" />
+  <meta property="og:description" content="Modern Solutions for Faster Results—Let Technology Move You Forward." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://yourdomain/images/og-card.png" />
+  <meta property="og:url" content="https://yourgithubusername.github.io/wdd231/finalproject/" />
+
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="theme-dark">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header / Nav (shared) -->
+  <header class="site-header" role="banner">
+    <a class="brand" href="index.html">
+      <img src="images/logo.svg" alt="RIT Energy logo" width="32" height="32" />
+      <span class="brand-text">RIT Energy Media &amp; Tech</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">Menu</button>
+
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="attributions.html">Attributions</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="page-container" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <h1 id="hero-title">Smarter solutions. Faster results.</h1>
+        <p class="subtitle">Modern web &amp; mobile apps, HRM/CRM, AI media, and process automation to move your organization forward.</p>
+        <p>
+          <a class="btn btn-primary" href="services.html">Explore Services</a>
+          <a class="btn btn-ghost" href="contact.html">Request Consultation</a>
+        </p>
+      </div>
+      <div class="hero-media">
+        <img src="images/og-card.png" alt="Service preview" width="800" height="418" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="cards" aria-labelledby="services-cta">
+      <h2 id="services-cta">What we do</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Digital Development</h3>
+          <p>Web &amp; mobile apps, e-commerce, backend systems and automation.</p>
+        </article>
+        <article class="card">
+          <h3>Media &amp; AI</h3>
+          <p>AI-assisted content, social media automation, church media & design.</p>
+        </article>
+        <article class="card">
+          <h3>Training &amp; Consulting</h3>
+          <p>Workshops, strategy, HRM & CRM implementation and optimization.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonials" aria-labelledby="testimonials-title">
+      <h2 id="testimonials-title">Small projects, big impact</h2>
+      <p class="muted">We deliver pragmatic technology solutions designed for speed and reliability.</p>
+      <div class="testimonial-grid">
+        <blockquote>
+          <p>“Excellent delivery — our workflow is 40% faster after automation.”</p>
+          <footer>— Client, Finance Services</footer>
+        </blockquote>
+        <blockquote>
+          <p>“Clear, responsive, and great communication.”</p>
+          <footer>— Client, Nonprofit</footer>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (shared) -->
+  <footer class="site-footer" role="contentinfo">
+    <p>Smarter solutions. Faster results.</p>
+    <nav aria-label="Footer">
+      <a href="attributions.html">Attributions</a>
+      <a href="https://www.youtube.com/your-video-id" rel="noopener" target="_blank">Project demo video</a>
+    </nav>
+    <small>&copy; 2025 RIT Energy Media &amp; Tech Service Consultant</small>
+  </footer>
+
+  <!-- Dialog skeleton (shared) -->
+  <dialog id="details-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <button class="dialog-close" aria-label="Close dialog">&times;</button>
+      <div class="details-content" role="document"></div>
+    </div>
+  </dialog>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

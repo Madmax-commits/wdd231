@@ -1,0 +1,107 @@
+[
+    {
+        "name": "Website Development",
+        "category": "Digital Development",
+        "complexity": "Medium",
+        "delivery": "2-4 weeks",
+        "description": "Custom responsive websites with modern UX, CMS integration, and SEO optimization."
+    },
+    {
+        "name": "Mobile App Development",
+        "category": "Digital Development",
+        "complexity": "High",
+        "delivery": "8-12 weeks",
+        "description": "Native iOS/Android or cross-platform apps with intuitive interfaces and offline support."
+    },
+    {
+        "name": "E-commerce Solutions",
+        "category": "Digital Development",
+        "complexity": "Medium",
+        "delivery": "3-6 weeks",
+        "description": "Secure online stores with payment gateway integration, inventory management, and analytics."
+    },
+    {
+        "name": "Business Automation",
+        "category": "Automation",
+        "complexity": "Medium",
+        "delivery": "2-4 weeks",
+        "description": "Automate repetitive business processes to improve efficiency and reduce manual work."
+    },
+    {
+        "name": "Workflow Optimization",
+        "category": "Automation",
+        "complexity": "Medium",
+        "delivery": "3-6 weeks",
+        "description": "Streamline complex workflows with custom automation scripts and integrations."
+    },
+    {
+        "name": "AI Media Pipelines",
+        "category": "AI & Data",
+        "complexity": "High",
+        "delivery": "6-10 weeks",
+        "description": "AI-driven media generation, automated tagging, and intelligent content distribution systems."
+    },
+    {
+        "name": "Data Engineering",
+        "category": "AI & Data",
+        "complexity": "High",
+        "delivery": "6-12 weeks",
+        "description": "ETL pipelines, data warehousing, and quality assurance for enterprise data systems."
+    },
+    {
+        "name": "CRM Integration",
+        "category": "Integration",
+        "complexity": "Medium",
+        "delivery": "3-5 weeks",
+        "description": "Seamless integration of CRM systems with existing business applications and workflows."
+    },
+    {
+        "name": "HRM Solutions",
+        "category": "Integration",
+        "complexity": "Medium",
+        "delivery": "3-6 weeks",
+        "description": "Employee lifecycle management, payroll integration, and HR analytics platforms."
+    },
+    {
+        "name": "Cloud Migration",
+        "category": "Infrastructure",
+        "complexity": "High",
+        "delivery": "6-12 weeks",
+        "description": "Migrate applications and data to cloud with minimal downtime and security compliance."
+    },
+    {
+        "name": "DevOps & CI/CD",
+        "category": "Infrastructure",
+        "complexity": "Medium",
+        "delivery": "2-6 weeks",
+        "description": "Automated builds, testing, and deployment pipelines for rapid, reliable releases."
+    },
+    {
+        "name": "Performance Tuning",
+        "category": "Infrastructure",
+        "complexity": "Medium",
+        "delivery": "1-3 weeks",
+        "description": "Optimize application performance, scalability, and resource utilization."
+    },
+    {
+        "name": "Security Audit",
+        "category": "Security",
+        "complexity": "Medium",
+        "delivery": "2-4 weeks",
+        "description": "Comprehensive security assessment with vulnerability identification and remediation plans."
+    },
+    {
+        "name": "Content Strategy",
+        "category": "Consulting",
+        "complexity": "Low",
+        "delivery": "1-2 weeks",
+        "description": "Strategic content planning, distribution channels, and audience engagement optimization."
+    },
+    {
+        "name": "Digital Marketing",
+        "category": "Consulting",
+        "complexity": "Medium",
+        "delivery": "4-8 weeks",
+        "description": "SEO optimization, paid campaigns, social media strategy, and analytics reporting."
+    }
+]

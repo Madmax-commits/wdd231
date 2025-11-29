@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RIT Energy — Form submission</title>
+
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <meta name="author" content="Tochukwu Carl-Mbanefo Ayobami" />
+  <meta name="description" content="Submitted contact form results." />
+  <meta property="og:title" content="RIT Energy Submission" />
+  <meta property="og:description" content="Form submission result page." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://yourdomain/images/og-card.png" />
+  <meta property="og:url" content="https://yourgithubusername.github.io/wdd231/finalproject/form-action.html" />
+
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="theme-dark">
+  <a class="skip-link" href="#result">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <a class="brand" href="index.html">
+      <img src="images/logo.svg" alt="RIT Energy logo" width="32" height="32" />
+      <span class="brand-text">RIT Energy Media &amp; Tech</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">Menu</button>
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="result" class="page-container" role="main">
+    <section aria-labelledby="submitted-title">
+      <h1 id="submitted-title">Form submission received</h1>
+      <div id="display"></div>
+      <p class="muted">A copy of your message is stored in localStorage for convenience.</p>
+      <p><a href="contact.html" class="btn btn-ghost">Back to contact</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>Smarter solutions. Faster results.</p>
+    <nav aria-label="Footer">
+      <a href="attributions.html">Attributions</a>
+      <a href="https://www.youtube.com/your-video-id" rel="noopener" target="_blank">Project demo video</a>
+    </nav>
+    <small>&copy; 2025 RIT Energy Media &amp; Tech Service Consultant</small>
+  </footer>
+
+  <script type="module">
+    // Simple script to read URL params and display them
+    const params = new URLSearchParams(location.search);
+    const display = document.getElementById('display');
+
+    function safe(s) {
+      return s ? String(s).replaceAll('<','&lt;').replaceAll('>','&gt;') : '';
+    }
+
+    const name = safe(params.get('name'));
+    const email = safe(params.get('email'));
+    const message = safe(params.get('message'));
+    const ts = safe(params.get('ts'));
+
+    if (!name && !email && !message) {
+      display.innerHTML = '<p class="error">No form data found. You may have navigated here directly.</p>';
+    } else {
+      display.innerHTML = `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong> ${message}</p>
+        <p><small>Timestamp: ${ts || '—'}</small></p>
+      `;
+    }
+
+    // Keep a message log copy in localStorage (if present)
+    try {
+      const existing = JSON.parse(localStorage.getItem('messages') || '[]');
+      if (name && email && message) {
+        existing.push({name, email, message, ts});
+        localStorage.setItem('messages', JSON.stringify(existing));
+      }
+    } catch (e) {
+      // ignore localStorage failures
+    }
+  </script>
+</body>
+</html>
