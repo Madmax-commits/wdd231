@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RIT Energy — Form submission</title>
+  <title>RIT Energy Media & Tech / Form submission</title>
 
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <meta name="author" content="Tochukwu Carl-Mbanefo Ayobami" />
@@ -16,15 +17,17 @@
 
   <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body class="theme-dark">
   <a class="skip-link" href="#result">Skip to main content</a>
 
   <header class="site-header" role="banner">
     <a class="brand" href="index.html">
-      <img src="images/logo.svg" alt="RIT Energy logo" width="32" height="32" />
+      <img src="images/logo_embedded.svg" alt="RIT Energy logo" width="32" height="32" />
       <span class="brand-text">RIT Energy Media &amp; Tech</span>
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">Menu</button>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav"
+      aria-label="Toggle navigation">Menu</button>
     <nav id="primary-nav" aria-label="Primary navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -58,7 +61,7 @@
     const display = document.getElementById('display');
 
     function safe(s) {
-      return s ? String(s).replaceAll('<','&lt;').replaceAll('>','&gt;') : '';
+      return s ? String(s).replaceAll('<', '&lt;').replaceAll('>', '&gt;') : '';
     }
 
     const name = safe(params.get('name'));
@@ -81,7 +84,7 @@
     try {
       const existing = JSON.parse(localStorage.getItem('messages') || '[]');
       if (name && email && message) {
-        existing.push({name, email, message, ts});
+        existing.push({ name, email, message, ts });
         localStorage.setItem('messages', JSON.stringify(existing));
       }
     } catch (e) {
@@ -89,4 +92,5 @@
     }
   </script>
 </body>
+
 </html>

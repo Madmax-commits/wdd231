@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RIT Energy — Services</title>
+  <title>RIT Energy Media & Tech / Services</title>
 
-  <link rel="icon" href="images/logo_embedded.svg" type="image/png" />
+  <link rel="icon" href="images/logo_embedded.svg" type="image/svg+xml" />
   <meta name="author" content="Tochukwu Carl-Mbanefo Ayobami" />
   <meta name="description" content="Services: web & mobile, HRM/CRM, AI media, automation." />
   <meta property="og:title" content="RIT Energy Services" />
@@ -16,19 +17,21 @@
 
   <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body class="theme-dark">
   <a class="skip-link" href="#services-main">Skip to main content</a>
 
   <header class="site-header" role="banner">
     <a class="brand" href="index.html">
-      <img src="images/logo.svg" alt="RIT Energy logo" width="32" height="32" />
+      <img src="images/logo_embedded.svg" alt="RIT Energy logo" width="32" height="32" />
       <span class="brand-text">RIT Energy Media &amp; Tech</span>
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">Menu</button>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav"
+      aria-label="Toggle navigation">Menu</button>
     <nav id="primary-nav" aria-label="Primary navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li><a href="services.html" aria-current="page">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -39,7 +42,7 @@
       <h1 id="services-title">Services</h1>
       <p class="muted">Browse our offerings. Click Details for more.</p>
 
-      <div class="service-grid" aria-live="polite">
+      <div class="service-grid" role="list" aria-live="polite">
         <!-- dynamic content goes here -->
       </div>
     </section>
@@ -49,13 +52,14 @@
     <p>Smarter solutions. Faster results.</p>
     <nav aria-label="Footer">
       <a href="attributions.html">Attributions</a>
-      <a href="https://www.youtube.com/your-video-id" rel="noopener" target="_blank">Project demo video</a>
+      <a href="https://www.youtube.com/your-video-id" rel="noopener noreferrer" target="_blank">Project demo video</a>
     </nav>
     <small>&copy; 2025 RIT Energy Media &amp; Tech Service Consultant</small>
   </footer>
 
   <dialog id="details-dialog" aria-labelledby="dialog-title">
     <div class="dialog-inner">
+      <h2 id="dialog-title" class="dialog-title">Service details</h2>
       <button class="dialog-close" aria-label="Close dialog">&times;</button>
       <div class="details-content" role="document"></div>
     </div>
@@ -63,4 +67,5 @@
 
   <script type="module" src="scripts/main.js"></script>
 </body>
+
 </html>

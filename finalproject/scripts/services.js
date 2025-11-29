@@ -28,13 +28,13 @@ export async function renderServices() {
         <h2>${cat} <small class="muted">(${list.length})</small></h2>
         <div class="service-cards">
           ${list.map(s => `
-            <article class="service-card" tabindex="0" aria-labelledby="${s.name.toLowerCase().replace(/\s+/g,'-')}-title">
-              <h3 id="${s.name.toLowerCase().replace(/\s+/g,'-')}-title">${s.name}</h3>
+            <article class="service-card" role="listitem" tabindex="0" aria-labelledby="${s.name.toLowerCase().replace(/\s+/g, '-')}-title">
+              <h3 id="${s.name.toLowerCase().replace(/\s+/g, '-')}-title">${s.name}</h3>
               <ul>
                 <li><strong>Category:</strong> ${s.category}</li>
                 <li><strong>Complexity:</strong> ${s.complexity}</li>
                 <li><strong>Delivery:</strong> ${s.delivery}</li>
-                <li><strong>ID:</strong> ${s.name.toLowerCase().replace(/\s+/g,'-')}</li>
+                <li><strong>ID:</strong> ${s.name.toLowerCase().replace(/\s+/g, '-')}</li>
               </ul>
               <button class="details-btn" type="button" data-service='${JSON.stringify(s).replaceAll("'", "&apos;")}'>Details</button>
             </article>
@@ -54,12 +54,68 @@ export async function renderServices() {
           <p><strong>Category:</strong> ${escapeHTML(data.category)}</p>
           <p><strong>Complexity:</strong> ${escapeHTML(data.complexity)}</p>
           <p><strong>Delivery:</strong> ${escapeHTML(data.delivery)}</p>
-          <p><small>ID: ${escapeHTML(data.name.toLowerCase().replace(/\s+/g,'-'))}</small></p>
+          <p><small>ID: ${escapeHTML(data.name.toLowerCase().replace(/\s+/g, '-'))}</small></p>
         `;
         if (typeof dlg.showModal === 'function') dlg.showModal();
         else dlg.setAttribute('open', '');
       });
     });
+
+    // Show only first 3 service cards initially, add a "More services" toggle
+    const cards = Array.from(grid.querySelectorAll('.service-card'));
+    if (cards.length > 3) {
+      grid.id = grid.id || 'service-grid';
+      // hide cards after the first 3
+      cards.forEach((c, i) => {
+        if (i >= 3) {
+          c.classList.add('collapsed');
+          c.style.display = 'none';
+        }
+      });
+
+      // hide any section that contains no visible cards
+      const sections = Array.from(grid.querySelectorAll('.service-section'));
+      sections.forEach(sec => {
+        const hasVisible = Array.from(sec.querySelectorAll('.service-card')).some(card => card.style.display !== 'none');
+        if (!hasVisible) sec.style.display = 'none';
+      });
+
+      const moreBtn = document.createElement('button');
+      moreBtn.type = 'button';
+      moreBtn.className = 'more-services';
+      moreBtn.textContent = 'More services';
+      moreBtn.setAttribute('aria-expanded', 'false');
+      moreBtn.setAttribute('aria-controls', grid.id);
+
+      // Insert button after the grid
+      grid.parentNode.insertBefore(moreBtn, grid.nextSibling);
+
+      moreBtn.addEventListener('click', () => {
+        const expanded = moreBtn.getAttribute('aria-expanded') === 'true';
+        if (!expanded) {
+          // show remaining
+          cards.forEach((c, i) => { if (i >= 3) c.style.display = ''; });
+          // show all sections
+          sections.forEach(sec => { sec.style.display = ''; });
+          moreBtn.textContent = 'Show fewer services';
+          moreBtn.setAttribute('aria-expanded', 'true');
+          // move focus to first revealed card
+          const firstRevealed = cards[3];
+          if (firstRevealed && typeof firstRevealed.focus === 'function') firstRevealed.focus();
+        } else {
+          // hide remaining
+          cards.forEach((c, i) => { if (i >= 3) c.style.display = 'none'; });
+          // hide sections that now have no visible cards
+          sections.forEach(sec => {
+            const hasVisible = Array.from(sec.querySelectorAll('.service-card')).some(card => card.style.display !== 'none');
+            if (!hasVisible) sec.style.display = 'none';
+          });
+          moreBtn.textContent = 'More services';
+          moreBtn.setAttribute('aria-expanded', 'false');
+          moreBtn.focus();
+        }
+      });
+    }
 
   } catch (err) {
     console.error(err);
@@ -67,4 +123,4 @@ export async function renderServices() {
   }
 }
 
-function escapeHTML(s){ return (s||'').toString().replaceAll('<','&lt;').replaceAll('>','&gt;') }
+function escapeHTML(s) { return (s || '').toString().replaceAll('<', '&lt;').replaceAll('>', '&gt;') }
