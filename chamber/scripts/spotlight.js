@@ -107,6 +107,29 @@ style.textContent = `
   .spotlight-card strong {
     color: var(--primary, #004d40);
   }
+
+  /* Responsive Grid - Always 3 cards, but adjust per device */
+#spotlight-container {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+  grid-template-columns: repeat(3, 1fr); /* Desktop default */
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  #spotlight-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #spotlight-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 `;
 document.head.appendChild(style);
 
