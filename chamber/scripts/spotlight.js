@@ -17,12 +17,12 @@ async function loadSpotlights() {
     container.innerHTML = ""; // clear previous cards
 
     random.forEach(member => {
-      const logo = member.logo || "images/default-logo.png";
+      const logo = member.logo || "images/shopping-6125344_640.png";
       const card = document.createElement("div");
       card.classList.add("spotlight-card");
       card.innerHTML = `
         <img src="${logo}" alt="${member.name} Logo" 
-             onerror="this.src='images/default-logo.png'">
+             onerror="this.src='images/shopping-6125344_640.png'">
         <h3>${member.name}</h3>
         <p>${member.phone}</p>
         <p>${member.address}</p>
