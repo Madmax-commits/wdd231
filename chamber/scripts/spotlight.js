@@ -23,7 +23,7 @@ async function loadSpotlights() {
     container.innerHTML = ""; // clear before adding
 
     random.forEach(member => {
-      const logo = member.logo || "images/default-logo.png"; // fallback
+      const logo = member.logo || "images/shopping-6125344_640.png"; // fallback
       card.innerHTML = `
         <img src="${logo}" alt="${member.name} Logo" 
             onerror="this.src='images/shopping-6125344_640.png'">
