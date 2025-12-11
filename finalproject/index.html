@@ -52,8 +52,34 @@
         </p>
       </div>
       <div class="hero-media">
-        <img src="images/logo_embedded.svg" alt="Service preview" width="800" height="418" loading="lazy" />
+        <img id="slideshow" src="images/logo1.jpg" alt="Service preview" width="800" height="418" loading="lazy" />
       </div>
+      <script>
+  // Array of 20 image paths
+  const images = [
+    "images/logo2.jpg",
+    "images/logo3.jpg",
+    "images/logo4.jpg",
+    "images/logo5.jpg",
+    "images/logo6.jpg",
+    "images/logo7.jpg",
+    "images/logo8.jpg",
+    "images/logo9.jpg",
+    "images/logo10.jpg",
+  ];
+
+  let index = 0;
+  const slideshow = document.getElementById("slideshow");
+
+  function changeImage() {
+    index = (index + 1) % images.length; // loop back to start
+    slideshow.src = images[index];
+  }
+
+  // Change image every 2 seconds
+  setInterval(changeImage, 2000);
+</script>
+
     </section>
 
     <section class="cards" aria-labelledby="services-cta">
