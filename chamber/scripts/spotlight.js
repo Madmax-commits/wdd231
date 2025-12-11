@@ -1,13 +1,26 @@
-// spotlight.js
-// Inject CSS for spotlight cards styled to match the site theme + gold/silver effects + animations
+// Inject CSS for spotlight cards styled to match the site theme + gold/silver effects + animations + responsive layout
 const style = document.createElement("style");
 style.textContent = `
-  /* Responsive Grid */
+  /* RESPONSIVE GRID — Always 3 Members */
   #spotlight-container {
     display: grid;
     gap: 1.5rem;
     padding: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Desktop default */
+  }
+
+  /* Tablet (2 columns) */
+  @media (max-width: 900px) {
+    #spotlight-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Mobile (1 column) */
+  @media (max-width: 600px) {
+    #spotlight-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   /* Spotlight Card Base */
@@ -80,13 +93,14 @@ style.textContent = `
     font-size: 1.05rem;
   }
 
+  /* Card Text */
   .spotlight-card p {
     margin: .3rem 0;
     color: var(--muted, #6b7280);
     font-size: .9rem;
   }
 
-  /* Visit website button */
+  /* Button */
   .spotlight-card a {
     display: inline-block;
     margin-top: .6rem;
@@ -107,29 +121,6 @@ style.textContent = `
   .spotlight-card strong {
     color: var(--primary, #004d40);
   }
-
-  /* Responsive Grid - Always 3 cards, but adjust per device */
-#spotlight-container {
-  display: grid;
-  gap: 1.5rem;
-  padding: 1rem;
-  grid-template-columns: repeat(3, 1fr); /* Desktop default */
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-  #spotlight-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  #spotlight-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
 `;
 document.head.appendChild(style);
 
