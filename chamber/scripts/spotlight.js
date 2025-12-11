@@ -1,18 +1,18 @@
 // spotlight.js
 async function loadSpotlights() {
   try {
-    const res = await fetch("data/index_members.json");
+    const res = await fetch("data/index_memebrs.json");
     const members = await res.json();
-    console.log("Members fetched:", members);
+    console.log("Memebrs fetched:", memebrs);
 
     // Gold + Silver first
-    let filtered = members.filter(m =>
-      m.membershipLevel === "Gold" || m.membershipLevel === "Silver"
+    let filtered = memebrs.filter(m =>
+      m.memebrshipLevel === "Gold" || m.memebrshipLevel === "Silver"
     );
 
     // If less than 3, include Bronze
     if (filtered.length < 3) {
-      const bronze = members.filter(m => m.membershipLevel === "Bronze");
+      const bronze = memebrs.filter(m => m.memebrshipLevel === "Bronze");
       filtered = filtered.concat(bronze);
     }
 
