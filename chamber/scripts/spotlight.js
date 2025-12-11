@@ -1,34 +1,49 @@
-a// spotlight.js
-
+// spotlight.js
 async function loadSpotlights() {
   try {
     const res = await fetch("data/index_members.json");
     const members = await res.json();
+    console.log("Members fetched:", members);
 
-    // Filter Gold + Silver only
-    const filtered = members.filter(m =>
+    // Gold + Silver first
+    let filtered = members.filter(m =>
       m.membershipLevel === "Gold" || m.membershipLevel === "Silver"
     );
 
-    // Shuffle and pick 2–3
+    // If less than 3, include Bronze
+    if (filtered.length < 3) {
+      const bronze = members.filter(m => m.membershipLevel === "Bronze");
+      filtered = filtered.concat(bronze);
+    }
+
+    // Shuffle and pick 3
     const random = filtered.sort(() => 0.5 - Math.random()).slice(0, 3);
 
     const container = document.getElementById("spotlight-container");
     container.innerHTML = ""; // clear before adding
 
     random.forEach(member => {
+      const logo = member.logo || "images/default-logo.png"; // fallback
+      card.innerHTML = `
+        <img src="${logo}" alt="${member.name} Logo" 
+            onerror="this.src='images/shopping-6125344_640.png'">
+        <h3>${member.name}</h3>
+        <p>${member.phone}</p>
+        <p>${member.address}</p>
+        <a href="${member.website}" target="_blank">Visit Website</a>
+        <p><strong>${member.membershipLevel} Member</strong></p>
+     `;
+ // fallback
       const card = document.createElement("div");
       card.classList.add("spotlight-card");
-
       card.innerHTML = `
-        <img src="${member.logo}" alt="${member.name} Logo">
+        <img src="${logo}" alt="${member.name} Logo" onerror="this.src='images/default-logo.png'">
         <h3>${member.name}</h3>
         <p>${member.phone}</p>
         <p>${member.address}</p>
         <a href="${member.website}" target="_blank">Visit Website</a>
         <p><strong>${member.membershipLevel} Member</strong></p>
       `;
-
       container.appendChild(card);
     });
 
@@ -43,32 +58,3 @@ if ('requestIdleCallback' in window) {
 } else {
   window.addEventListener('load', loadSpotlights, { once: true });
 }
-
-const CACHE_NAME = 'konwea-v1';
-const ASSETS = [
-  '/',
-  '/index.html',
-  '/styles/index.css',
-  '/scripts/weather.js',
-  '/scripts/spotlight.js',
-  '/scripts/directory.js',
-  '/images/coins-1726618-800.webp',
-  '/images/coins-1726618-1600.webp',
-  '/images/shopping-6125344_640.png'
-];
-
-self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
-  self.skipWaiting();
-});
-
-self.addEventListener('activate', (e) => {
-  e.waitUntil(clients.claim());
-});
-
-self.addEventListener('fetch', (e) => {
-  const url = new URL(e.request.url);
-  if (ASSETS.includes(url.pathname) || url.origin === location.origin) {
-    e.respondWith(caches.match(e.request).then(resp => resp || fetch(e.request)));
-  }
-});
