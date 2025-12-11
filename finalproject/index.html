@@ -25,46 +25,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- Header / Nav (shared) -->
- <header class="site-header" role="banner">
-  <a class="brand" href="index.html">
-    <img id="slideshow" src="images/logo1.jpg" alt="RIT Energy logo" width="32" height="32" />
-    <span class="brand-text">RIT Media / Web &amp; Tech- services</span>
-  </a>
-  <script>
-  // Array of 20 image paths
-  const images = [
-    "images/logo2.jpeg",
-    "images/logo3.jpg",
-    "images/logo4.jpg",
-    "images/logo5.jpg",
-    "images/logo6.jpg",
-    "images/logo7.jpg",
-    "images/logo8.jpg",
-    "images/logo9.jpg",
-    "images/logo10.jpg",
-    "images/logo11.svg",
-    "images/logo12.svg",
-    "images/logo13.svg",
-    "images/logo14.svg",
-    "images/logo15.svg",
-    "images/logo16.svg",
-    "images/logo17.svg",
-    "images/logo18.svg",
-    "images/logo19.svg",
-    "images/logo20.svg"
-  ];
-
-  let index = 0;
-  const slideshow = document.getElementById("slideshow");
-
-  function changeImage() {
-    index = (index + 1) % images.length; // loop back to start
-    slideshow.src = images[index];
-  }
-
-  // Change image every 2 seconds
-  setInterval(changeImage, 2000);
-</script>
+ <header class="site-header" role="banner"> <a class="brand" href="index.html"> <img src="images/logo_embedded.svg" alt="RIT Energy logo" width="32" height="32" /> <span class="brand-text">RIT Media / Web &amp; Tech- services</span> </a>
 
     <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav"
       aria-label="Toggle navigation">Menu</button>
