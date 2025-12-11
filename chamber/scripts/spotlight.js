@@ -121,6 +121,67 @@ style.textContent = `
   .spotlight-card strong {
     color: var(--primary, #004d40);
   }
+    /* Toggle Button */
+.toggle-btn {
+  background: var(--primary, #004d40);
+  color: #fff;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin: 1rem 0;
+  font-size: .9rem;
+  transition: background .25s ease;
+}
+
+.toggle-btn:hover {
+  background: var(--accent, #ffb300);
+  color: #0f1724;
+}
+
+/* GRID VIEW (default) */
+#spotlight-container.grid-view {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  #spotlight-container.grid-view {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #spotlight-container.grid-view {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* LIST VIEW */
+#spotlight-container.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list-view .spotlight-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list-view .logo {
+  margin-bottom: 0;
+}
+
+.list-view .spotlight-card p,
+.list-view .spotlight-card a {
+  font-size: .9rem;
+}
+
 `;
 document.head.appendChild(style);
 
@@ -191,4 +252,22 @@ if (filtered.length < 3) {
   }
 }
 
-window.addEventListener('load', loadSpotlights);
+window.addEventListener('load', () => {
+  loadSpotlights();
+  document.getElementById("spotlight-container").classList.add("grid-view");
+});
+
+// Toggle View (Grid <-> List)
+document.getElementById("viewToggle").addEventListener("click", function () {
+  const container = document.getElementById("spotlight-container");
+
+  if (container.classList.contains("grid-view")) {
+    container.classList.remove("grid-view");
+    container.classList.add("list-view");
+    this.textContent = "Switch to Grid View";
+  } else {
+    container.classList.remove("list-view");
+    container.classList.add("grid-view");
+    this.textContent = "Switch to List View";
+  }
+});
