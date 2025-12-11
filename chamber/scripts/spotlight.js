@@ -132,9 +132,22 @@ async function loadSpotlights() {
     const members = await res.json();
 
     // Filter Gold + Silver
-    let filtered = members.filter(
-      m => m.membershipLevel === "Gold" || m.membershipLevel === "Silver"
-    );
+    // Filter Gold/Silver
+let filtered = members.filter(m =>
+  m.membershipLevel === "Gold" || m.membershipLevel === "Silver"
+);
+
+// If fewer than 3, fill with others
+if (filtered.length < 3) {
+  const others = members.filter(m =>
+    m.membershipLevel !== "Gold" && m.membershipLevel !== "Silver"
+  );
+
+  // Add missing members
+  const needed = 3 - filtered.length;
+  filtered = filtered.concat(others.slice(0, needed));
+}
+
 
     // Shuffle + pick 3
     const random = filtered.sort(() => 0.5 - Math.random()).slice(0, 3);
