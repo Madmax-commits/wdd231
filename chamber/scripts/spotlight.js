@@ -1,7 +1,7 @@
 // spotlight.js
 async function loadSpotlights() {
   try {
-    const res = await fetch("data/index_members.json");
+    const res = await fetch("data/index_memebrs.json");
     if (!res.ok) throw new Error("Failed to fetch members JSON");
     const members = await res.json();
 
