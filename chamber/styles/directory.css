@@ -24,11 +24,10 @@ header {
   position: relative;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+.header-inner{display:flex;align-items:center;justify-content:space-between;flex:1;gap:1rem}
+.logo{display:flex;align-items:center;gap:.75rem}
+.logo img{height:44px;width:auto;border-radius:8px}
+.brand{font-weight:700;color:#fff;letter-spacing:.2px;font-size:1rem}
 
 nav ul {
   list-style: none;
