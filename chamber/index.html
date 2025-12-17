@@ -63,47 +63,56 @@
 
   <!-- Hero -->
   <section class="hero" aria-labelledby="hero-title">
-    <picture>
-  <source 
-    srcset="images/coins-1726618.webp 800w, images/coins-1726618.webp 1600w" 
-    type="image/webp"
-  />
-  <source 
-    srcset="images/coins-1726618.jpg 800w, images/coins-1726618.jpg 1600w" 
-    type="image/jpeg"
-  />
-  <img 
-    id="hero-image"
-    src="images\coins-1726618.jpg" 
-    alt="Hands holding coins — supporting local business growth"
-    fetchpriority="high" 
-    loading="eager" 
-    decoding="async" 
-    sizes="(max-width: 600px) 800px, 1600px"
-    width="1600"
-    height="600"
-  />
-</picture>
-
-    <div class="hero-wrap">
-      <h1 id="hero-title">Welcome to Konwea Chamber of Commerce</h1>
-      <p>Supporting local businesses and strengthening our community.</p>
-
-      <div class="hero-location" role="region" aria-label="Location information">
-        <span aria-hidden="true">📍</span>
-        <span>289 Nnebisi Road, Asaba, Delta State</span>
-        <a 
-          class="loc-map" 
-          href="https://maps.app.goo.gl/FW7i7tnM6qPNmUtB8" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          aria-label="View location on Google Maps"
-        >View map</a>
-      </div>
-
-      <a href="join.html" class="cta-btn">Join the Chamber</a>
+  <!-- Slideshow background -->
+  <div class="slideshow">
+    <div class="slide fade">
+      <img src="images/coins-1726618.jpg" alt="Hands holding coins — supporting local business growth">
     </div>
-  </section>
+    <div class="slide fade">
+      <img src="images/shopping-6125344_640.png" alt="Konwea Chamber Logo showcase">
+    </div>
+    <div class="slide fade">
+      <img src="images/konweasamplepic1.jpg" alt="Community business preview">
+    </div>
+    <div class="slide fade">
+      <img src="images/konweasamplepic2.jpg" alt="Community business preview">
+    </div>
+    <div class="slide fade">
+      <img src="images/konweasamplepic3.jpg" alt="Community business preview">
+    </div>
+
+    <!-- Navigation dots -->
+    <div class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <!-- Overlay content -->
+  <div class="hero-wrap">
+    <h1 id="hero-title">Welcome to Konwea Chamber of Commerce</h1>
+    <p>Supporting local businesses and strengthening our community.</p>
+
+    <!-- ✅ Keep hero-location intact here -->
+    <div class="hero-location" role="region" aria-label="Location information">
+      <span aria-hidden="true">📍</span>
+      <span>289 Nnebisi Road, Asaba, Delta State</span>
+      <a 
+        class="loc-map" 
+        href="https://maps.app.goo.gl/8DW6FHYLLJmrFwmL9" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="View location on Google Maps"
+      >View map</a>
+    </div>
+
+    <a href="join.html" class="cta-btn">Join the Chamber</a>
+  </div>
+</section>
+
 
   <!-- Main Content -->
   <main id="main-content" role="main">
@@ -173,6 +182,34 @@
         aria-label="Featured business spotlight cards"
       ></div>
     </section>
+    <section class="map-section" aria-labelledby="map-heading">
+  <h2 id="map-heading">Find Us</h2>
+  <p>Visit us at Konwea Shopping Plaza, Asaba, Delta State.</p>
+  
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.123456789!2d6.715975!3d6.2065855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1043f393eff89ed5%3A0xbc041047c4ecc269!2sKonwea%20Shopping%20Plaza!5e0!3m2!1sen!2sng!4v1700000000000"
+    width="100%"
+    height="400"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+  <!-- Get Directions button -->
+  <div class="map-cta">
+    <a 
+      href="https://maps.app.goo.gl/8DW6FHYLLJmrFwmL9" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="cta-btn"
+      aria-label="Open Google Maps for directions"
+    >
+      Get Directions
+    </a>
+  </div>
+</section>
+
   </main>
 
   <footer role="contentinfo">
@@ -246,6 +283,41 @@
       });
     }
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slideshow .slide");
+  const dots = document.querySelectorAll(".slideshow .dot");
+
+  function showSlides() {
+    slides.forEach(s => s.style.display = "none");
+    dots.forEach(d => d.classList.remove("active"));
+
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add("active");
+
+    setTimeout(showSlides, 4000); // change every 4s
+  }
+
+  // Start slideshow
+  showSlides();
+
+  // Allow manual dot navigation
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      slideIndex = i;
+      slides.forEach(s => s.style.display = "none");
+      dots.forEach(d => d.classList.remove("active"));
+      slides[slideIndex].style.display = "block";
+      dots[slideIndex].classList.add("active");
+    });
+  });
+});
+</script>
+
 </body>
 
 </html>
