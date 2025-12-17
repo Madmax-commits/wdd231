@@ -14,6 +14,7 @@
 
   <link rel="icon" href="images/shopping-6125344_640.png" type="image/x-icon" />
   <link rel="stylesheet" href="styles/directory.css" />
+    
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -58,32 +59,47 @@
       <p>Join us in building a stronger community through collaboration and partnership.</p>
     </section>
 
-    <section class="info-grid" aria-label="Chamber information boxes">
-      <div class="info-box events" role="region" aria-labelledby="events-title">
-        <h3 id="events-title">Upcoming Events</h3>
-        <ul>
-          <li><time datetime="2025-10-20T17:00">Event One - Oct 20, 2025 @ 5:00 PM</time></li>
-          <li><time datetime="2025-10-21T18:00">Event Two - Oct 21, 2025 @ 6:00 PM</time></li>
-          <li><time datetime="2025-10-22T19:00">Event Three - Oct 22, 2025 @ 7:00 PM</time></li>
-        </ul>
-      </div>
-      
-      <div class="info-box weather" role="region" aria-labelledby="weather-title">
-        <h3 id="weather-title">Current Weather</h3>
-        <p><span aria-label="Weather condition emoji">🌤</span> 75°F | High: 80°F | Low: 52°F</p>
-        <p>Humidity: 62%</p>
-        <p>Sunrise: 7:30 AM | Sunset: 9:59 PM</p>
-      </div>
-      
-      <div class="info-box forecast" role="region" aria-labelledby="forecast-title">
-        <h3 id="forecast-title">Forecast</h3>
-        <ul>
-          <li>Today: 90°F</li>
-          <li>Wednesday: 89°F</li>
-          <li>Friday: 86°F</li>
-        </ul>
-      </div>
+    <!-- Events -->
+    <section class="events" aria-labelledby="events-heading">
+      <h2 id="events-heading">Upcoming Events &amp; Programs</h2>
+      <article>
+        <div class="meta">
+          <time datetime="2025-10-15T07:30">October 15, 2025 @ 7:30 AM</time>
+          <span class="place">Community Hall</span>
+        </div>
+        <div class="content">
+          <h3>Business Networking Breakfast</h3>
+          <p>Connect with local business leaders and entrepreneurs over breakfast.</p>
+          <a href="#" class="event-cta">Learn More</a>
+        </div>
+      </article>
+
+      <article>
+        <div class="meta">
+          <time datetime="2025-10-22T17:00">October 22, 2025 @ 5:00 PM</time>
+          <span class="place">Chamber Office</span>
+        </div>
+        <div class="content">
+          <h3>Small Business Workshop</h3>
+          <p>Expert tips for growing your small business in the digital age.</p>
+          <a href="#" class="event-cta">Register</a>
+        </div>
+      </article>
     </section>
+
+    <!-- Weather -->
+    <section class="weather" aria-labelledby="weather-heading">
+      <h2 id="weather-heading">Local Weather</h2>
+      <div 
+        id="current-weather" 
+        class="weather-card" 
+        role="status" 
+        aria-live="polite"
+        aria-label="Current weather information"
+      >
+        <div class="temp" aria-label="Temperature">--°C</div>
+        <div class="desc">Loading weather data...</div>
+      </div>
 
     <h2 id="featured-heading" class="featured-heading">Featured Businesses</h2>
     
