@@ -9,39 +9,40 @@ document.addEventListener('DOMContentLoaded', () => {
     second: '2-digit'
   });
   
-  document.getElementById('timestamp').value = timestamp;
+  const timestampInput = document.getElementById('timestamp');
+  if (timestampInput) {
+    timestampInput.value = timestamp;
+  }
 
-  // Modal functionality
+  // Modal functionality with accessibility
   const learnBtns = document.querySelectorAll('.learn-btn');
   
   learnBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const modalId = btn.getAttribute('data-modal');
       const modal = document.getElementById(modalId);
-      if (modal) {
+      if (modal && modal.tagName === 'DIALOG') {
         modal.showModal();
-      }
-    });
-
-    // Keyboard: Enter to open modal
-    btn.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        btn.click();
+        // Focus first focusable element in modal
+        const firstFocusable = modal.querySelector('button, a, input, select, textarea');
+        if (firstFocusable) firstFocusable.focus();
       }
     });
   });
 
-  // Close modal buttons
+  // Close modal buttons with keyboard support
   const closeButtons = document.querySelectorAll('.modal-close');
   closeButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.target.closest('dialog').close();
+      const modal = btn.closest('dialog');
+      if (modal) modal.close();
     });
 
-    // Keyboard: Escape closes modal (native)
-    btn.addEventListener('keypress', (e) => {
+    // ESC key closes modal (native dialog behavior)
+    btn.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        btn.closest('dialog').close();
+        const modal = btn.closest('dialog');
+        if (modal) modal.close();
       }
     });
   });
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Form validation pattern
+  // Form field validation
   const orgTitleInput = document.getElementById('orgTitle');
   if (orgTitleInput) {
     orgTitleInput.addEventListener('blur', () => {
@@ -68,15 +69,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Form submission
+  // Form submission handler
   const form = document.querySelector('.membership-form');
   if (form) {
     form.addEventListener('submit', (e) => {
-      // Browser will validate required fields and patterns
+      // HTML5 validation will be performed by browser
       if (!form.checkValidity()) {
         e.preventDefault();
         form.reportValidity();
       }
     });
+  }
+
+  // Hamburger menu (shared navigation)
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.querySelector('#navMenu ul');
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('show');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      hamburger.textContent = isOpen ? '✖' : '☰';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && e.target !== hamburger) {
+        navMenu.classList.remove('show');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.textContent = '☰';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.textContent = '☰';
+        hamburger.focus();
+      }
+    });
+  }
+
+  // Update year and last modified
+  const yearEl = document.getElementById('year');
+  const lastModEl = document.getElementById('lastModified');
+  
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+  
+  if (lastModEl) {
+    lastModEl.textContent = new Date(document.lastModified).toLocaleString();
   }
 });

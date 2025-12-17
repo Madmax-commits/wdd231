@@ -2,81 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RIT Energy Media & Tech Service Consultant – Site Plan</title>
   <style>
-    /* Color Scheme */
+    :root {
+      --primary: #004aad;
+      --accent: #ff6f3c;
+      --bg-light: #f9fafc;
+      --text-dark: #222222;
+      --border: #ddd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background-color: #f9fafc; /* light neutral background */
-      color: #222222; /* dark text for readability */
-      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      font-family: 'Roboto', -apple-system, sans-serif;
+      line-height: 1.6;
+      padding: 2rem 1rem;
     }
+
     h1, h2 {
-      color: #004aad; /* deep blue for headings */
+      color: var(--primary);
       font-family: 'Montserrat', sans-serif;
+      margin-bottom: 1rem;
     }
+
+    h1 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+    }
+
     p, li {
       font-family: 'Roboto', sans-serif;
+      margin-bottom: 0.75rem;
     }
-    .accent {
-      color: #ff6f3c; /* orange accent for highlights */
-    }
+
     section {
-      margin-bottom: 20px;
-      padding: 15px;
-      border: 1px solid #ddd;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
       background-color: #ffffff;
+      border-radius: 8px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .accent {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .color-swatch {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    pre {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 1rem;
+      }
+
+      pre {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Website Project Plan</h1>
+  <main>
+    <h1>Website Project Plan</h1>
 
-  <!-- Site Name -->
-  <section>
-    <h2>Site Name</h2>
-    <p><strong>RIT Digital Solutions</strong></p>
-    <p>This name was chosen to reflect the brand identity of RIT Energy Media & Tech Service Consultant, emphasizing modern digital solutions for faster results.</p>
-    <p class="accent">Optional domain availability: ritdigitalsolutions.com</p>
-  </section>
+    <!-- Site Name -->
+    <section aria-labelledby="site-name-heading">
+      <h2 id="site-name-heading">Site Name</h2>
+      <p><strong>RIT Digital Solutions</strong></p>
+      <p>This name was chosen to reflect the brand identity of RIT Energy Media & Tech Service Consultant, emphasizing modern digital solutions for faster results.</p>
+      <p class="accent">Optional domain availability: ritdigitalsolutions.com</p>
+    </section>
 
-  <!-- Site Purpose -->
-  <section>
-    <h2>Site Purpose</h2>
-    <p>The purpose of RIT Digital Solutions is to showcase consulting services in technology, media, and digital transformation. The site will highlight service categories such as Digital Development, Business Systems & Integration, Media & AI, and Training & Consulting. It will provide a professional platform for clients to learn about offerings and book consultations.</p>
-  </section>
+    <!-- Site Purpose -->
+    <section aria-labelledby="purpose-heading">
+      <h2 id="purpose-heading">Site Purpose</h2>
+      <p>The purpose of RIT Digital Solutions is to showcase consulting services in technology, media, and digital transformation. The site will highlight service categories such as Digital Development, Business Systems &amp; Integration, Media &amp; AI, and Training &amp; Consulting. It will provide a professional platform for clients to learn about offerings and book consultations.</p>
+    </section>
 
-  <!-- Scenarios -->
-  <section>
-    <h2>Scenarios</h2>
-    <ul>
-      <li>What digital solutions can help my business integrate modern systems?</li>
-      <li>How can I book a consultation with RIT Energy Media & Tech Service Consultant?</li>
-      <li>What training programs are available for adopting AI-driven tools?</li>
-    </ul>
-  </section>
+    <!-- Scenarios -->
+    <section aria-labelledby="scenarios-heading">
+      <h2 id="scenarios-heading">Scenarios</h2>
+      <ul>
+        <li>What digital solutions can help my business integrate modern systems?</li>
+        <li>How can I book a consultation with RIT Energy Media & Tech Service Consultant?</li>
+        <li>What training programs are available for adopting AI-driven tools?</li>
+      </ul>
+    </section>
 
-  <!-- Color Scheme -->
-  <section>
-    <h2>Color Scheme</h2>
-    <p>Main Background: <span style="background-color:#f9fafc; padding:2px 6px;">#f9fafc</span></p>
-    <p>Headings: <span style="color:#004aad;">#004aad</span></p>
-    <p>Accent: <span style="color:#ff6f3c;">#ff6f3c</span></p>
-  </section>
+    <!-- Color Scheme -->
+    <section aria-labelledby="colors-heading">
+      <h2 id="colors-heading">Color Scheme</h2>
+      <p>Main Background: <span class="color-swatch" style="background-color: #f9fafc; border: 1px solid #ddd;">#f9fafc</span></p>
+      <p>Headings: <span class="color-swatch" style="background-color: #004aad; color: white;">#004aad</span></p>
+      <p>Accent: <span class="color-swatch" style="background-color: #ff6f3c; color: white;">#ff6f3c</span></p>
+    </section>
 
-  <!-- Typography -->
-  <section>
-    <h2>Typography</h2>
-    <ul>
-      <li><strong>Montserrat</strong> – used for headings (modern, professional look)</li>
-      <li><strong>Roboto</strong> – used for body text (clean and readable)</li>
-    </ul>
-  </section>
+    <!-- Typography -->
+    <section aria-labelledby="typography-heading">
+      <h2 id="typography-heading">Typography</h2>
+      <ul>
+        <li><strong>Montserrat</strong> – used for headings (modern, professional look)</li>
+        <li><strong>Roboto</strong> – used for body text (clean and readable)</li>
+      </ul>
+    </section>
 
-  <!-- Wireframe -->
-  <section>
-    <h2>Wireframe</h2>
-    <p>Sketch representation of the homepage layout:</p>
-    <pre>
+    <!-- Wireframe -->
+    <section aria-labelledby="wireframe-heading">
+      <h2 id="wireframe-heading">Wireframe</h2>
+      <p>Sketch representation of the homepage layout:</p>
+      <pre>
     Mobile View:
  ---------------------------------
 | LOGO                          |
@@ -118,26 +205,26 @@
 | FOOTER (full width)                                   |
 | - Contact Info | Social Links | Quick Links           |
 ---------------------------------------------------------
+      </pre>
+    </section>
 
-    </pre>
-  </section>
+    <!-- CSS Architecture -->
+    <section aria-labelledby="css-heading">
+      <h2 id="css-heading">CSS Architecture</h2>
+      <p>Supporting CSS files will ensure responsive design, consistent color scheme, and typography. Flexbox and CSS Grid will be used for layout, with media queries for mobile responsiveness.</p>
+    </section>
 
-  <!-- CSS -->
-  <section>
-    <h2>CSS</h2>
-    <p>Supporting CSS files will ensure responsive design, consistent color scheme, and typography. Flexbox and CSS Grid will be used for layout, with media queries for mobile responsiveness.</p>
-  </section>
-
-  <!-- Testing -->
-  <section>
-    <h2>Testing</h2>
-    <ul>
-      <li>HTML Validation: W3C Markup Validator</li>
-      <li>Accessibility: WAVE Web Accessibility Evaluation Tool</li>
-      <li>Best Practices, SEO & Performance: Google PageSpeed Insights / Chrome DevTools Lighthouse</li>
-      <li>Color Contrast: WebAIM Contrast Checker</li>
-    </ul>
-  </section>
+    <!-- Testing -->
+    <section aria-labelledby="testing-heading">
+      <h2 id="testing-heading">Testing &amp; Validation</h2>
+      <ul>
+        <li><strong>HTML Validation:</strong> W3C Markup Validator</li>
+        <li><strong>Accessibility:</strong> WAVE Web Accessibility Evaluation Tool</li>
+        <li><strong>Best Practices, SEO &amp; Performance:</strong> Google PageSpeed Insights / Chrome DevTools Lighthouse</li>
+        <li><strong>Color Contrast:</strong> WebAIM Contrast Checker</li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
 

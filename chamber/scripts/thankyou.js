@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Extract query parameters from URL
+  // Extract and display query parameters
   const params = new URLSearchParams(window.location.search);
 
-  // Map of parameter names to display element IDs
   const fieldMappings = {
     firstName: 'display-firstName',
     lastName: 'display-lastName',
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     timestamp: 'display-timestamp'
   };
 
-  // Populate displayed data
+  // Safely populate displayed data
   Object.keys(fieldMappings).forEach(paramName => {
     const displayElementId = fieldMappings[paramName];
     const value = params.get(paramName) || '—';
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Update year and last modified (from directory.js)
+  // Update year and last modified
   const yearEl = document.getElementById('year');
   const lastModEl = document.getElementById('lastModified');
   
@@ -35,28 +34,34 @@ document.addEventListener('DOMContentLoaded', () => {
     lastModEl.textContent = new Date(document.lastModified).toLocaleString();
   }
 
-  // Hamburger menu (copied from directory.js)
+  // Hamburger menu with accessibility
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.querySelector('#navMenu ul');
 
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', (e) => {
       e.stopPropagation();
-      navMenu.classList.toggle('show');
-      hamburger.textContent = navMenu.classList.contains('show') ? '✖' : '☰';
+      const isOpen = navMenu.classList.toggle('show');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      hamburger.textContent = isOpen ? '✖' : '☰';
     });
 
+    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!navMenu.contains(e.target) && e.target !== hamburger) {
         navMenu.classList.remove('show');
+        hamburger.setAttribute('aria-expanded', 'false');
         hamburger.textContent = '☰';
       }
     });
 
+    // Close menu on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && navMenu.classList.contains('show')) {
         navMenu.classList.remove('show');
+        hamburger.setAttribute('aria-expanded', 'false');
         hamburger.textContent = '☰';
+        hamburger.focus();
       }
     });
   }

@@ -25,60 +25,69 @@
 </head>
 
 <body>
-  <header>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header role="banner">
     <div class="header-inner">
       <div class="logo">
-        <img src="images/shopping-6125344_640.png" alt="Konwea Chamber Logo" />
+        <img src="images/shopping-6125344_640.png" alt="Konwea Chamber Logo" width="44" height="44" />
         <span class="brand">Konwea Chamber of Commerce</span>
       </div>
 
-      <button id="hamburger" aria-label="Toggle Navigation Menu">☰</button>
+      <button id="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
 
-      <nav id="navMenu">
+      <nav id="navMenu" role="navigation" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="directory.html">Directory</a></li>
           <li><a href="join.html">Join</a></li>
           <li><a href="discover.html">Discover</a></li>
         </ul>
       </nav>
 
-      <button class="cta">Tickets</button>
+      <button class="cta" aria-label="Buy Tickets">Tickets</button>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" aria-labelledby="hero-title">
     <picture>
-      <source src="images/coins-1726618-1600.webp 1600w, images/coins-1726618-800.webp 800w" type="image/webp">
-      <source src="images/coins-1726618-1600.jpg 1600w, images/coins-1726618-800.jpg 800w" type="image/jpeg">
-      <img class="hero-lcp" src="images/coins-1726618.webp" alt="Hands holding coins — support local business"
-        fetchpriority="high" loading="eager" decoding="async" sizes="(max-width: 600px) 800px, 1600px" />
+      <source srcset="images/coins-1726618-800.webp 800w, images/coins-1726618-1600.webp 1600w" type="image/webp">
+      <source srcset="images/coins-1726618-800.jpg 800w, images/coins-1726618-1600.jpg 1600w" type="image/jpeg">
+      <img 
+        id="hero-image"
+        src="images/coins-1726618.webp" 
+        alt="Hands holding coins — support local business"
+        fetchpriority="high" 
+        loading="eager" 
+        decoding="async" 
+        sizes="(max-width: 600px) 800px, 1600px"
+        width="1600"
+        height="600"
+      />
     </picture>
     <div class="hero-wrap">
-      <h1>Welcome to Konwea Chamber of Commerce</h1>
+      <h1 id="hero-title">Welcome to Konwea Chamber of Commerce</h1>
       <p>Supporting local businesses and strengthening our community.</p>
 
-      <p class="hero-location" aria-label="Location">
+      <div class="hero-location" role="contentinfo" aria-label="Location">
         <span class="loc-icon" aria-hidden="true">📍</span>
         <span class="loc-text">289 Nnebisi Road, Asaba, Delta State</span>
-        <a class="loc-map" href="https://maps.app.goo.gl/FW7i7tnM6qPNmUtB8" target="_blank"
-          rel="noopener noreferrer">View map</a>
-      </p>
+        <a class="loc-map" href="https://maps.app.goo.gl/FW7i7tnM6qPNmUtB8" target="_blank" rel="noopener noreferrer">View map</a>
+      </div>
 
       <a href="join.html" class="cta-btn">Join the Chamber</a>
     </div>
   </section>
 
   <!-- Main Content -->
-  <main>
+  <main id="main-content" role="main">
     <!-- Events -->
-    <section class="events">
-      <h2>Upcoming Events / Internship - training Programs / Job Opennings</h2>
+    <section class="events" aria-labelledby="events-heading">
+      <h2 id="events-heading">Upcoming Events &amp; Programs</h2>
       <article>
         <div class="meta">
-          <span class="date">October 15, 2025</span>
-          <span class="time">7:30 AM</span>
+          <time datetime="2025-10-15T07:30">October 15, 2025 @ 7:30 AM</time>
           <span class="place">Community Hall</span>
         </div>
         <div class="content">
@@ -90,8 +99,7 @@
 
       <article>
         <div class="meta">
-          <span class="date">October 22, 2025</span>
-          <span class="time">5:00 PM</span>
+          <time datetime="2025-10-22T17:00">October 22, 2025 @ 5:00 PM</time>
           <span class="place">Chamber Office</span>
         </div>
         <div class="content">
@@ -103,28 +111,26 @@
     </section>
 
     <!-- Weather -->
-    <!-- Weather -->
-    <section class="weather">
-      <h2>Local Weather</h2>
-      <div id="current-weather" class="weather-card">
-        <div class="temp">--°C</div>
-        <div class="desc">Loading...</div>
+    <section class="weather" aria-labelledby="weather-heading">
+      <h2 id="weather-heading">Local Weather</h2>
+      <div id="current-weather" class="weather-card" role="status" aria-live="polite">
+        <div class="temp" aria-label="Temperature">--°C</div>
+        <div class="desc">Loading weather data...</div>
       </div>
-      <div id="forecast">
+      <div id="forecast" role="region" aria-label="3-day weather forecast">
         <h3>3-Day Forecast</h3>
       </div>
     </section>
 
     <!-- Spotlights -->
-    <section class="spotlights">
-      <h2>Featured Businesses</h2>
-      <button id="viewToggle" class="toggle-btn">Switch to List View</button>
-      <div id="spotlight-container"></div>
-      <div id="spotlight-container" class="spotlight-grid"></div>
+    <section class="spotlights" aria-labelledby="spotlight-heading">
+      <h2 id="spotlight-heading">Featured Businesses</h2>
+      <button id="viewToggle" class="toggle-btn" aria-pressed="false">Switch to List View</button>
+      <div id="spotlight-container" class="spotlight-grid" role="region" aria-label="Featured business spotlight cards"></div>
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <div class="footer-inner">
       <div class="footer-brand">
         <span class="brand">Konwea Chamber</span>
@@ -133,20 +139,21 @@
 
       <div class="footer-contact">
         <p><strong>Contact:</strong></p>
-        <p>📍 289 Nnebisi Road, Asaba</p>
-        <p>📧 KonweaChamber@proton.me</p>
-        <p>📞 (+234) 0000-0000-00</p>
+        <address>
+          <p>📍 289 Nnebisi Road, Asaba</p>
+          <p>📧 <a href="mailto:KonweaChamber@proton.me">KonweaChamber@proton.me</a></p>
+          <p>📞 <a href="tel:+2340000000000">(+234) 0000-0000-00</a></p>
+        </address>
       </div>
 
       <div class="footer-links">
-        <p>
-        <strong>
-        <a href="index.html">Home</a>
-        <a href="directory.html">Directory</a>
-        <a href="join.html">Join</a>
-        <a href="discover.html">Discover</a>
-        </strong>
-        </p>
+        <p><strong>Quick Links:</strong></p>
+        <nav aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="directory.html">Directory</a>
+          <a href="join.html">Join</a>
+          <a href="discover.html">Discover</a>
+        </nav>
       </div>
 
       <div class="social">
@@ -157,16 +164,16 @@
     </div>
 
     <div class="footer-bottom">
-      <p> chamber of Commerce Project | Tochukwu Carl-Mbanefo</p>
+      <p>WDD0231 Class Project | Tochukwu Carl-Mbanefo</p>
       <p>&copy; <span id="year"></span> Konwea Chamber of Commerce</p>
       <p>Last Updated: <span id="lastModified"></span></p>
     </div>
   </footer>
 
   <!-- Defer all non-critical scripts -->
-  <script defer src="scripts/wheather.js"></script>
+  <script defer src="scripts/weather.js"></script>
   <script defer src="scripts/spotlight.js"></script>
-  <script defer src="scripts/directory.js"></script>
+  <script defer src="scripts/main.js"></script>
 
   <!-- Register service worker for caching -->
   <script>
