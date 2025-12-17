@@ -495,7 +495,7 @@ img{max-width:100%;height:auto;display:block}
 
   /* Navigation mobile */
  nav {
-    display: none;
+    display: block;
   }
 
   nav ul {
