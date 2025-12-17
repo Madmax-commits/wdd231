@@ -483,15 +483,15 @@ img{max-width:100%;height:auto;display:block}
     height: 32px;
     width: auto;
   }
+.brand {
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  white-space: normal;   /* allow wrapping */
+  overflow: visible;     /* don’t clip text */
+  text-overflow: unset;  /* remove ellipsis */
+  font-weight: 700;
+}
 
-  .brand {
-    font-size: 0.75rem;
-    letter-spacing: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: 700;
-  }
 
   /* Navigation mobile */
  nav {
