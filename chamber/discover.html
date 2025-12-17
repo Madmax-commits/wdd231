@@ -11,7 +11,7 @@
   <script type="module" src="scripts/discover.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content" tabindex="0">Skip to content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header id="site-header" class="site-header" role="banner">
     <div class="container header-inner">
@@ -41,12 +41,23 @@
   <main class="container" id="main-content" role="main" aria-labelledby="page-heading">
     <section id="intro" class="intro">
       <h2 id="page-heading">Discover Local Highlights</h2>
-      <p>Explore 8 curated items of interest in our area. Click "Learn More" for details.</p>
+      <p>Explore 8 curated items of interest in our area. Click &quot;Learn More&quot; for details about each location.</p>
     </section>
 
-    <div id="visit-message" class="visit-message" aria-live="polite" role="status"></div>
+    <div 
+      id="visit-message" 
+      class="visit-message" 
+      aria-live="polite" 
+      role="status"
+      aria-label="Visit reminder message"
+    ></div>
 
-    <section id="discover-grid" class="discover-grid" aria-label="Discover items gallery"></section>
+    <section 
+      id="discover-grid" 
+      class="discover-grid" 
+      aria-label="Discover items gallery"
+      role="region"
+    ></section>
   </main>
 
   <footer id="site-footer" class="site-footer" role="contentinfo">

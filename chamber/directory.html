@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Konwea Chamber of Commerce - Member Directory & Local Business Growth" />
+  <meta name="description" content="Konwea Chamber of Commerce - Member Directory &amp; Local Business Growth" />
   <meta name="author" content="Tochukwu Carl-Mbanefo" />
   <title>Directory | Konwea Chamber of Commerce</title>
 
@@ -21,11 +21,23 @@
   <header role="banner">
     <div class="header-inner">
       <div class="logo">
-        <img src="images/shopping-6125344_640.png" alt="Konwea Chamber Logo" width="44" height="44" />
+        <img 
+          src="images/shopping-6125344_640.png" 
+          alt="Konwea Chamber Logo" 
+          width="44" 
+          height="44"
+          loading="eager"
+          decoding="async"
+        />
         <h1 class="brand">Meet Our Prestige Members</h1>
       </div>
 
-      <button id="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+      <button 
+        id="hamburger" 
+        aria-label="Toggle Navigation Menu" 
+        aria-expanded="false" 
+        aria-controls="navMenu"
+      >☰</button>
 
       <nav id="navMenu" role="navigation" aria-label="Main navigation">
         <ul>
@@ -46,9 +58,7 @@
       <p>Join us in building a stronger community through collaboration and partnership.</p>
     </section>
 
-    <section class="info-grid" aria-labelledby="info-heading">
-      <h2 id="info-heading" class="sr-only">Chamber Information</h2>
-      
+    <section class="info-grid" aria-label="Chamber information boxes">
       <div class="info-box events" role="region" aria-labelledby="events-title">
         <h3 id="events-title">Upcoming Events</h3>
         <ul>
@@ -60,7 +70,7 @@
       
       <div class="info-box weather" role="region" aria-labelledby="weather-title">
         <h3 id="weather-title">Current Weather</h3>
-        <p><span aria-label="Weather condition">🌤</span> 75°F | High: 80°F | Low: 52°F</p>
+        <p><span aria-label="Weather condition emoji">🌤</span> 75°F | High: 80°F | Low: 52°F</p>
         <p>Humidity: 62%</p>
         <p>Sunrise: 7:30 AM | Sunset: 9:59 PM</p>
       </div>
@@ -78,17 +88,31 @@
     <h2 id="featured-heading" class="featured-heading">Featured Businesses</h2>
     
     <div class="view-toggle" role="group" aria-label="View options">
-      <button id="gridView" aria-pressed="true" aria-label="Grid view">Grid View</button>
-      <button id="listView" aria-pressed="false" aria-label="List view">List View</button>
+      <button 
+        id="gridView" 
+        aria-pressed="true" 
+        aria-label="Grid view"
+      >Grid View</button>
+      <button 
+        id="listView" 
+        aria-pressed="false" 
+        aria-label="List view"
+      >List View</button>
     </div>
 
-    <section id="members" class="grid" role="region" aria-label="Member directory"></section>
+    <section 
+      id="members" 
+      class="grid" 
+      role="region" 
+      aria-label="Member directory"
+      aria-live="polite"
+    ></section>
   </main>
 
   <footer role="contentinfo">
     <div class="footer-inner">
       <div class="footer-brand">
-        <p><strong>Contact:</strong></p>
+        <h3>Contact Information</h3>
         <address>
           <p>📍 289 Nnebisi Road, Asaba</p>
           <p>📧 <a href="mailto:info@konweachamber.org">info@konweachamber.org</a></p>
@@ -97,9 +121,25 @@
         </address>
       </div>
       <nav class="social" aria-label="Social media links">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+        <h3>Follow Us</h3>
+        <a 
+          href="https://facebook.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Konwea Chamber on Facebook"
+        >Facebook</a>
+        <a 
+          href="https://twitter.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Konwea Chamber on Twitter"
+        >Twitter</a>
+        <a 
+          href="https://linkedin.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Konwea Chamber on LinkedIn"
+        >LinkedIn</a>
       </nav>
       <div>
         <p>WDD0231 Class Project | Tochukwu Carl-Mbanefo</p>

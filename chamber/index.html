@@ -30,11 +30,23 @@
   <header role="banner">
     <div class="header-inner">
       <div class="logo">
-        <img src="images/shopping-6125344_640.png" alt="Konwea Chamber Logo" width="44" height="44" />
+        <img 
+          src="images/shopping-6125344_640.png" 
+          alt="Konwea Chamber Logo" 
+          width="44" 
+          height="44" 
+          loading="eager"
+          decoding="async"
+        />
         <span class="brand">Konwea Chamber of Commerce</span>
       </div>
 
-      <button id="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+      <button 
+        id="hamburger" 
+        aria-label="Toggle Navigation Menu" 
+        aria-expanded="false" 
+        aria-controls="navMenu"
+      >☰</button>
 
       <nav id="navMenu" role="navigation" aria-label="Main navigation">
         <ul>
@@ -52,12 +64,18 @@
   <!-- Hero -->
   <section class="hero" aria-labelledby="hero-title">
     <picture>
-      <source srcset="images/coins-1726618-800.webp 800w, images/coins-1726618-1600.webp 1600w" type="image/webp">
-      <source srcset="images/coins-1726618-800.jpg 800w, images/coins-1726618-1600.jpg 1600w" type="image/jpeg">
+      <source 
+        srcset="images/coins-1726618-800.webp 800w, images/coins-1726618-1600.webp 1600w" 
+        type="image/webp"
+      />
+      <source 
+        srcset="images/coins-1726618-800.jpg 800w, images/coins-1726618-1600.jpg 1600w" 
+        type="image/jpeg"
+      />
       <img 
         id="hero-image"
         src="images/coins-1726618.webp" 
-        alt="Hands holding coins — support local business"
+        alt="Hands holding coins — supporting local business growth"
         fetchpriority="high" 
         loading="eager" 
         decoding="async" 
@@ -70,10 +88,16 @@
       <h1 id="hero-title">Welcome to Konwea Chamber of Commerce</h1>
       <p>Supporting local businesses and strengthening our community.</p>
 
-      <div class="hero-location" role="contentinfo" aria-label="Location">
-        <span class="loc-icon" aria-hidden="true">📍</span>
-        <span class="loc-text">289 Nnebisi Road, Asaba, Delta State</span>
-        <a class="loc-map" href="https://maps.app.goo.gl/FW7i7tnM6qPNmUtB8" target="_blank" rel="noopener noreferrer">View map</a>
+      <div class="hero-location" role="region" aria-label="Location information">
+        <span aria-hidden="true">📍</span>
+        <span>289 Nnebisi Road, Asaba, Delta State</span>
+        <a 
+          class="loc-map" 
+          href="https://maps.app.goo.gl/FW7i7tnM6qPNmUtB8" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="View location on Google Maps"
+        >View map</a>
       </div>
 
       <a href="join.html" class="cta-btn">Join the Chamber</a>
@@ -113,11 +137,21 @@
     <!-- Weather -->
     <section class="weather" aria-labelledby="weather-heading">
       <h2 id="weather-heading">Local Weather</h2>
-      <div id="current-weather" class="weather-card" role="status" aria-live="polite">
+      <div 
+        id="current-weather" 
+        class="weather-card" 
+        role="status" 
+        aria-live="polite"
+        aria-label="Current weather information"
+      >
         <div class="temp" aria-label="Temperature">--°C</div>
         <div class="desc">Loading weather data...</div>
       </div>
-      <div id="forecast" role="region" aria-label="3-day weather forecast">
+      <div 
+        id="forecast" 
+        role="region" 
+        aria-label="3-day weather forecast"
+      >
         <h3>3-Day Forecast</h3>
       </div>
     </section>
@@ -125,8 +159,18 @@
     <!-- Spotlights -->
     <section class="spotlights" aria-labelledby="spotlight-heading">
       <h2 id="spotlight-heading">Featured Businesses</h2>
-      <button id="viewToggle" class="toggle-btn" aria-pressed="false">Switch to List View</button>
-      <div id="spotlight-container" class="spotlight-grid" role="region" aria-label="Featured business spotlight cards"></div>
+      <button 
+        id="viewToggle" 
+        class="toggle-btn" 
+        aria-pressed="false"
+        aria-label="Switch between grid and list view"
+      >Switch to List View</button>
+      <div 
+        id="spotlight-container" 
+        class="spotlight-grid" 
+        role="region" 
+        aria-label="Featured business spotlight cards"
+      ></div>
     </section>
   </main>
 
@@ -157,9 +201,27 @@
       </div>
 
       <div class="social">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+        <p><strong>Follow Us:</strong></p>
+        <nav aria-label="Social media links">
+          <a 
+            href="https://facebook.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Konwea Chamber on Facebook"
+          >Facebook</a>
+          <a 
+            href="https://twitter.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Konwea Chamber on Twitter"
+          >Twitter</a>
+          <a 
+            href="https://linkedin.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Konwea Chamber on LinkedIn"
+          >LinkedIn</a>
+        </nav>
       </div>
     </div>
 
@@ -179,19 +241,10 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker?.register('sw.js').catch(() => {/*sw reg failed*/ });
+        navigator.serviceWorker?.register('sw.js').catch(() => {});
       });
     }
   </script>
-  <script>
-  const hamburger = document.getElementById("hamburger");
-  const navMenu = document.querySelector("nav ul");
-
-  hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
-  });
-</script>
-
 </body>
 
 </html>

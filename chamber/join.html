@@ -17,11 +17,23 @@
   <header role="banner">
     <div class="header-inner">
       <div class="logo">
-        <img src="images/logo.png" alt="Konwea Chamber Logo" width="44" height="44" />
+        <img 
+          src="images/logo.png" 
+          alt="Konwea Chamber Logo" 
+          width="44" 
+          height="44"
+          loading="eager"
+          decoding="async"
+        />
         <span class="brand">Konwea Chamber</span>
       </div>
 
-      <button id="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+      <button 
+        id="hamburger" 
+        aria-label="Toggle Navigation Menu" 
+        aria-expanded="false" 
+        aria-controls="navMenu"
+      >☰</button>
 
       <nav id="navMenu" role="navigation" aria-label="Main navigation">
         <ul>
@@ -50,7 +62,11 @@
           <h3>NP Membership</h3>
           <p class="price">Free</p>
           <p class="description">For non-profit organizations</p>
-          <button class="learn-btn" aria-label="Learn more about NP Membership" data-modal="modal-np">
+          <button 
+            class="learn-btn" 
+            aria-label="Learn more about NP Membership" 
+            data-modal="modal-np"
+          >
             Learn More
           </button>
         </div>
@@ -59,7 +75,11 @@
           <h3>Bronze Membership</h3>
           <p class="price">₦50,000/year</p>
           <p class="description">Perfect for growing businesses</p>
-          <button class="learn-btn" aria-label="Learn more about Bronze Membership" data-modal="modal-bronze">
+          <button 
+            class="learn-btn" 
+            aria-label="Learn more about Bronze Membership" 
+            data-modal="modal-bronze"
+          >
             Learn More
           </button>
         </div>
@@ -68,7 +88,11 @@
           <h3>Silver Membership</h3>
           <p class="price">₦100,000/year</p>
           <p class="description">Enhanced visibility &amp; benefits</p>
-          <button class="learn-btn" aria-label="Learn more about Silver Membership" data-modal="modal-silver">
+          <button 
+            class="learn-btn" 
+            aria-label="Learn more about Silver Membership" 
+            data-modal="modal-silver"
+          >
             Learn More
           </button>
         </div>
@@ -77,7 +101,11 @@
           <h3>Gold Membership</h3>
           <p class="price">₦200,000/year</p>
           <p class="description">Premium support &amp; exposure</p>
-          <button class="learn-btn" aria-label="Learn more about Gold Membership" data-modal="modal-gold">
+          <button 
+            class="learn-btn" 
+            aria-label="Learn more about Gold Membership" 
+            data-modal="modal-gold"
+          >
             Learn More
           </button>
         </div>
@@ -85,7 +113,7 @@
 
       <section class="form-section" aria-labelledby="form-title">
         <h2 id="form-title">Application Form</h2>
-        <form method="get" action="thankyou.html" class="membership-form" novalidate>
+        <form method="get" action="thankyou.html" class="membership-form">
           <fieldset>
             <legend>Applicant Information</legend>
 
@@ -127,12 +155,13 @@
                 type="text"
                 id="orgTitle"
                 name="orgTitle"
-                title="Enter your organizational title (minimum 7 characters, letters, hyphens, and spaces only)"
+                title="Enter your organizational title"
                 autocomplete="organization-title"
                 pattern="^[a-zA-Z\-\s]{7,}$"
                 placeholder="e.g., Business Manager"
+                aria-describedby="orgTitle-help"
               />
-              <small>Minimum 7 characters (letters, hyphens, and spaces)</small>
+              <small id="orgTitle-help">Minimum 7 characters (letters, hyphens, and spaces)</small>
             </div>
 
             <div class="form-group">
@@ -232,7 +261,10 @@
   <!-- Modals -->
   <dialog id="modal-np" class="membership-modal" aria-labelledby="modal-np-title">
     <div class="modal-content">
-      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <button 
+        class="modal-close" 
+        aria-label="Close modal"
+      >&times;</button>
       <h2 id="modal-np-title">NP Membership Benefits</h2>
       <ul>
         <li>✓ Access to member directory</li>
@@ -242,7 +274,11 @@
         <li>✓ Non-profit forum access</li>
       </ul>
       <p class="modal-price">Cost: Free</p>
-      <button class="modal-cta" onclick="document.getElementById('membershipLevel').value='np'; document.getElementById('modal-np').close();">
+      <button 
+        class="modal-cta" 
+        aria-label="Select NP Membership and close"
+        onclick="document.getElementById('membershipLevel').value='np'; document.getElementById('modal-np').close();"
+      >
         Select NP Membership
       </button>
     </div>
@@ -250,7 +286,10 @@
 
   <dialog id="modal-bronze" class="membership-modal" aria-labelledby="modal-bronze-title">
     <div class="modal-content">
-      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <button 
+        class="modal-close" 
+        aria-label="Close modal"
+      >&times;</button>
       <h2 id="modal-bronze-title">Bronze Membership Benefits</h2>
       <ul>
         <li>✓ All NP benefits</li>
@@ -261,7 +300,11 @@
         <li>✓ Member support hotline</li>
       </ul>
       <p class="modal-price">Cost: ₦50,000/year</p>
-      <button class="modal-cta" onclick="document.getElementById('membershipLevel').value='bronze'; document.getElementById('modal-bronze').close();">
+      <button 
+        class="modal-cta" 
+        aria-label="Select Bronze Membership and close"
+        onclick="document.getElementById('membershipLevel').value='bronze'; document.getElementById('modal-bronze').close();"
+      >
         Select Bronze Membership
       </button>
     </div>
@@ -269,7 +312,10 @@
 
   <dialog id="modal-silver" class="membership-modal" aria-labelledby="modal-silver-title">
     <div class="modal-content">
-      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <button 
+        class="modal-close" 
+        aria-label="Close modal"
+      >&times;</button>
       <h2 id="modal-silver-title">Silver Membership Benefits</h2>
       <ul>
         <li>✓ All Bronze benefits</li>
@@ -281,7 +327,11 @@
         <li>✓ Dedicated liaison</li>
       </ul>
       <p class="modal-price">Cost: ₦100,000/year</p>
-      <button class="modal-cta" onclick="document.getElementById('membershipLevel').value='silver'; document.getElementById('modal-silver').close();">
+      <button 
+        class="modal-cta" 
+        aria-label="Select Silver Membership and close"
+        onclick="document.getElementById('membershipLevel').value='silver'; document.getElementById('modal-silver').close();"
+      >
         Select Silver Membership
       </button>
     </div>
@@ -289,7 +339,10 @@
 
   <dialog id="modal-gold" class="membership-modal" aria-labelledby="modal-gold-title">
     <div class="modal-content">
-      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <button 
+        class="modal-close" 
+        aria-label="Close modal"
+      >&times;</button>
       <h2 id="modal-gold-title">Gold Membership Benefits</h2>
       <ul>
         <li>✓ All Silver benefits</li>
@@ -302,7 +355,11 @@
         <li>✓ Annual business consultation</li>
       </ul>
       <p class="modal-price">Cost: ₦200,000/year</p>
-      <button class="modal-cta" onclick="document.getElementById('membershipLevel').value='gold'; document.getElementById('modal-gold').close();">
+      <button 
+        class="modal-cta" 
+        aria-label="Select Gold Membership and close"
+        onclick="document.getElementById('membershipLevel').value='gold'; document.getElementById('modal-gold').close();"
+      >
         Select Gold Membership
       </button>
     </div>
@@ -335,9 +392,24 @@
       </div>
 
       <nav class="social" aria-label="Social media">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+        <a 
+          href="https://facebook.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Konwea Chamber on Facebook"
+        >Facebook</a>
+        <a 
+          href="https://twitter.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Konwea Chamber on Twitter"
+        >Twitter</a>
+        <a 
+          href="https://linkedin.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Konwea Chamber on LinkedIn"
+        >LinkedIn</a>
       </nav>
     </div>
 
