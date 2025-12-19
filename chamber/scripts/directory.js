@@ -75,55 +75,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
         membersContainer.innerHTML = '';
         membersContainer.setAttribute('role', 'list');
+members.forEach(member => {
 
-        members.forEach((member, index) => {
-          const card = document.createElement('div');
-          card.classList.add('member-card');
-          card.setAttribute('role', 'listitem');
+  const levelMap = {
+    3: { label: "Gold", class: "gold" },
+    2: { label: "Silver", class: "silver" },
+    1: { label: "Bronze", class: "bronze" }
+  };
 
-          const img = document.createElement('img');
-          img.src = `images/${escapeHtml(member.image)}`;
-          img.alt = escapeHtml(member.name);
-          img.width = 120;
-          img.height = 120;
-          img.loading = 'lazy';
-          img.decoding = 'async';
+  const level = levelMap[member.membership] || { label: "Member", class: "" };
 
-          const info = document.createElement('div');
-          info.classList.add('member-info');
-          
-          const name = document.createElement('h3');
-          name.textContent = member.name;
-          
-          const description = document.createElement('p');
-          description.textContent = member.description;
-          
-          const address = document.createElement('p');
-          address.innerHTML = `<strong>Address:</strong> ${escapeHtml(member.address)}`;
-          
-          const phone = document.createElement('p');
-          const phoneLink = document.createElement('a');
-          phoneLink.href = `tel:${escapeHtml(member.phone)}`;
-          phoneLink.textContent = member.phone;
-          phone.innerHTML = '<strong>Phone:</strong> ';
-          phone.appendChild(phoneLink);
-          
-          const website = document.createElement('p');
-          const websiteLink = document.createElement('a');
-          websiteLink.href = escapeHtml(member.website);
-          websiteLink.textContent = member.website;
-          websiteLink.target = '_blank';
-          websiteLink.rel = 'noopener noreferrer';
-          website.innerHTML = '<strong>Website:</strong> ';
-          website.appendChild(websiteLink);
-          
-          const membership = document.createElement('p');
-          membership.innerHTML = `<strong>Membership:</strong> ${getMembershipLevel(member.membership)}`;
+  const card = document.createElement('div');
+  card.className = `member-card ${level.class}`;
+  card.setAttribute('role', 'listitem');
 
-          info.append(name, description, address, phone, website, membership);
-          card.append(img, info);
-          membersContainer.appendChild(card);
-        });
+  card.innerHTML = `
+    <div class="logo">
+      <img src="images/${escapeHtml(member.image)}"
+           alt="${escapeHtml(member.name)} logo"
+           loading="lazy"
+           onerror="this.src='images/shopping-6125344_640.png'">
+      <h3>${escapeHtml(member.name)}</h3>
+    </div>
+
+    <div class="member-info">
+      <p>${escapeHtml(member.description)}</p>
+      <p><strong>Address:</strong> ${escapeHtml(member.address)}</p>
+      <p><strong>Phone:</strong>
+        <a href="tel:${escapeHtml(member.phone)}">
+          ${escapeHtml(member.phone)}
+        </a>
+      </p>
+      <a href="${escapeHtml(member.website)}"
+         target="_blank"
+         rel="noopener noreferrer">
+        Visit Website
+      </a>
+      <p><strong>${level.label} Member</strong></p>
+    </div>
+  `;
+
+  membersContainer.appendChild(card);
+});
+
       } catch (err) {
         console.error('Error loading members:', err);
         membersContainer.innerHTML = '<p style="color: #d32f2f; grid-column: 1 / -1; text-align: center; padding: 2rem;">Unable to load member directory. Please try again later.</p>';

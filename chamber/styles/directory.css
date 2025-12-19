@@ -776,3 +776,118 @@ footer .footer-inner > .social {
     margin: 0 auto;
   }
 }
+/* ===== DIRECTORY MEMBER CARDS — SPOTLIGHT STYLE ===== */
+
+/* Grid stays controlled by #members.grid / .list */
+#members.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Card Base */
+.member-card {
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.45);
+  transition: transform .25s ease, box-shadow .25s ease, border .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.14);
+}
+
+/* Membership Glow Effects */
+.member-card.gold {
+  border: 1px solid rgba(255,179,0,0.6);
+  box-shadow: 0 0 18px rgba(255,179,0,0.55);
+}
+
+.member-card.silver {
+  border: 1px solid rgba(200,200,200,0.6);
+  box-shadow: 0 0 14px rgba(220,220,220,0.6);
+}
+
+.member-card.bronze {
+  border: 1px solid rgba(205,127,50,0.5);
+}
+
+/* Logo + Name Row */
+.member-card .logo {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .75rem;
+}
+
+.member-card img {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(.85);
+  animation: logoPop .6s ease forwards;
+  border: 2px solid var(--secondary-color);
+}
+
+@keyframes logoPop {
+  0% { opacity: 0; transform: scale(.85); }
+  60% { opacity: 1; transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.member-info h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Text */
+.member-info p {
+  margin: .3rem 0;
+  font-size: .9rem;
+  color: var(--text-muted);
+}
+
+/* Website Button */
+.member-info a {
+  display: inline-block;
+  margin-top: .6rem;
+  padding: .45rem .9rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 10px;
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .25s ease;
+}
+
+.member-info a:hover {
+  background: var(--secondary-color);
+  color: #071019;
+}
+
+/* List View */
+#members.list .member-card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#members.list img {
+  width: 56px;
+  height: 56px;
+}
+
+#members.list .member-info {
+  text-align: left;
+}
