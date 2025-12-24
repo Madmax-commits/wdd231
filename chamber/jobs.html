@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find available jobs at Konwea Chamber. Browse positions across different locations and job types.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore upcoming events and programs at Konwea Chamber. Networking opportunities, workshops, and more.">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+    content="Konwea Shopping Plaza Chamber of Commerce - Supporting Local Business Growth and Community Development" />
+    <meta name="author" content="Tochukwu Carl-Mbanefo" />
+    <title>Jobs | Konwea Chamber</title>
+
+  <!-- Social Media Meta -->
+    <meta property="og:title" content="Konwea Shopping Plaza Chamber of Commerce" />
+    <meta property="og:description"
+    content="Welcome to Konwea Chamber of Commerce. Connecting businesses and communities. Explore events, business directories, and join the local economic movement." />
+    <meta property="og:image" content="images/social-preview.jpg" />
+    <meta property="og:url" content="https://yourdomain.com" />
+  <!-- Preconnect to API to shave connection time -->
+  <!-- Preload LCP hero image (use a WebP optimized variant if available) -->
+  <link rel="preload" as="image" href="images/coins-1726618.webp" type="image/webp" />
+
+  <link rel="icon" href="images/shopping-6125344_640.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/jobs.css">
+</head>
+<body>
+     <header role="banner">
+    <div class="header-inner">
+      <div class="logo">
+        <img 
+          src="images/shopping-6125344_640.png" 
+          alt="Konwea Chamber Logo" 
+          width="44" 
+          height="44" 
+          loading="eager"
+          decoding="async"
+        />
+        <span class="brand">Konwea Chamber of Commerce</span>
+      </div>
+
+      <button 
+        id="hamburger" 
+        aria-label="Toggle Navigation Menu" 
+        aria-expanded="false" 
+        aria-controls="navMenu"
+      >☰</button>
+
+      <nav id="navMenu" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+
+      <button class="cta" aria-label="Buy Tickets">Tickets</button>
+    </div>
+  </header>
+
+    <main class="jobs-container">
+        <div class="jobs-layout">
+            <!-- Filter Sidebar -->
+            <aside class="filters-sidebar" aria-label="Job filters">
+                <h2>Filter Jobs</h2>
+                <form id="filterForm" class="filter-form">
+                    <div class="form-group">
+                        <label for="keywordInput">Keyword</label>
+                        <input 
+                            type="text" 
+                            id="keywordInput" 
+                            placeholder="Search by position..."
+                            aria-label="Search jobs by keyword"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="locationSelect">Location</label>
+                        <select id="locationSelect" aria-label="Filter by location">
+                            <option value="">All Locations</option>
+                            <option value="asaba">Asaba</option>
+                            <option value="remote">Remote</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jobTypeSelect">Job Type</label>
+                        <select id="jobTypeSelect" aria-label="Filter by job type">
+                            <option value="">All Job Types</option>
+                            <option value="full-time">Full-time</option>
+                            <option value="part-time">Part-time</option>
+                            <option value="contract">Contract</option>
+                            <option value="internship">Internship-Programs</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeframeSelect">Posted</label>
+                        <select id="timeframeSelect" aria-label="Filter by posted timeframe">
+                            <option value="">Any time</option>
+                            <option value="1h">Last 1 hour</option>
+                            <option value="2h">Last 2 hours</option>
+                            <option value="24h">Last 24 hours</option>
+                            <option value="7d">Last 7 days</option>
+                            <option value="30d">Last 30 days</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Apply Filters</button>
+                    <button type="reset" class="btn btn-secondary">Clear Filters</button>
+                </form>
+            </aside>
+
+            <!-- Jobs Section -->
+            <section class="jobs-section">
+                <div class="jobs-header">
+                    <h1>Available Jobs</h1>
+                    <p id="jobCount" class="job-count" aria-live="polite">Loading jobs...</p>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loadingState" class="loading" aria-hidden="true">
+                    <p>Loading jobs...</p>
+                </div>
+
+                <!-- Jobs Grid -->
+                <div id="jobsContainer" class="jobs-grid" role="region" aria-label="Job listings">
+                    <!-- Jobs will be inserted here by JavaScript -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state" hidden aria-live="polite">
+                    <p>No jobs found matching your criteria. Try adjusting your filters.</p>
+                </div>
+
+                <!-- Pagination -->
+                <nav id="paginationContainer" class="pagination" aria-label="Job pagination">
+                    <!-- Pagination buttons will be inserted here by JavaScript -->
+                </nav>
+            </section>
+        </div>
+    </main>
+    <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand">Konwea Chamber</span>
+        <p>Building stronger business connections in Delta State.</p>
+      </div>
+
+      <div class="footer-contact">
+        <p><strong>Contact:</strong></p>
+        <address>
+          <p>📍 289 Nnebisi Road, Asaba</p>
+          <p>📧 <a href="mailto:KonweaChamber@proton.me">KonweaChamber@proton.me</a></p>
+          <p>📞 <a href="tel:+2340000000000">(+234) 0000-0000-00</a></p>
+        </address>
+      </div>
+
+      <div class="footer-links">
+        <p><strong>Quick Links:</strong></p>
+        <nav aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="directory.html">Directory</a>
+          <a href="join.html">Join</a>
+          <a href="discover.html">Discover</a>
+        </nav>
+      </div>
+
+      <div class="social">
+        <p><strong>Follow Us:</strong></p>
+        <nav aria-label="Social media links">
+          <a 
+            href="https://facebook.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Konwea Chamber on Facebook"
+          >Facebook</a>
+          <a 
+            href="https://twitter.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Konwea Chamber on Twitter"
+          >Twitter</a>
+          <a 
+            href="https://linkedin.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Konwea Chamber on LinkedIn"
+          >LinkedIn</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Konwea Chamber of Commerce | Tochukwu Carl-Mbanefo</p>
+      <p>&copy; <span id="year"></span> Konwea Chamber of Commerce</p>
+      <p>Last Updated: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+    <script src="scripts/jobs.js"></script>
+    <script defer src="scripts/main.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu").querySelector("ul");
+
+    hamburger.addEventListener("click", () => {
+      const expanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", !expanded);
+      navMenu.classList.toggle("show");
+    });
+  });
+</script>
+</body>
+</html>
+

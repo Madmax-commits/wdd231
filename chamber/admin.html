@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+    content="Konwea Shopping Plaza Chamber of Commerce - Supporting Local Business Growth and Community Development" />
+    <meta name="author" content="Tochukwu Carl-Mbanefo" />
+    <title>Admin - Post Jobs</title>
+
+  <!-- Social Media Meta -->
+    <meta property="og:title" content="Konwea Shopping Plaza Chamber of Commerce" />
+    <meta property="og:description"
+    content="Welcome to Konwea Chamber of Commerce. Connecting businesses and communities. Explore events, business directories, and join the local economic movement." />
+    <meta property="og:image" content="images/social-preview.jpg" />
+    <meta property="og:url" content="https://yourdomain.com" />
+  <!-- Preconnect to API to shave connection time -->
+  <!-- Preload LCP hero image (use a WebP optimized variant if available) -->
+  <link rel="preload" as="image" href="images/coins-1726618.webp" type="image/webp" />
+
+  <link rel="icon" href="images/shopping-6125344_640.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/jobs.css">
+  <style>
+    :root{--admin-max:900px}
+    body{font-family:system-ui,Segoe UI,Arial;margin:1rem;background:var(--bg);color:var(--text)}
+    .admin-wrap{max-width:var(--admin-max);margin:1.5rem auto;padding:1rem}
+    .card{background:var(--card);padding:1.25rem;border-radius:12px;box-shadow:var(--shadow)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+    label{display:block;font-weight:700;margin-bottom:0.25rem}
+    input[type=text], input[type=email], input[type=url], textarea {width:100%;padding:0.6rem;border:1px solid #e6e9ee;border-radius:8px}
+    textarea{min-height:120px}
+    .field-help{font-size:0.9rem;color:var(--muted);margin-top:0.25rem}
+    .actions{display:flex;gap:0.5rem;align-items:center;margin-top:1rem}
+    .jobs-list h2{margin-top:1rem}
+    #jobsList ul{padding:0;list-style:none}
+    #jobsList li{display:flex;justify-content:space-between;align-items:center;padding:0.6rem;border-radius:8px;border:1px solid #eee;margin-bottom:0.5rem}
+    #jobsList li .meta{color:var(--muted);font-size:0.95rem}
+    .btn {font-weight:700}
+    @media (max-width:700px){.form-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+     <header role="banner">
+    <div class="header-inner">
+      <div class="logo">
+        <img 
+          src="images/shopping-6125344_640.png" 
+          alt="Konwea Chamber Logo" 
+          width="44" 
+          height="44" 
+          loading="eager"
+          decoding="async"
+        />
+        <span class="brand">Konwea Chamber of Commerce</span>
+      </div>
+
+      <button 
+        id="hamburger" 
+        aria-label="Toggle Navigation Menu" 
+        aria-expanded="false" 
+        aria-controls="navMenu"
+      >☰</button>
+
+      <nav id="navMenu" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+
+      <button class="cta" aria-label="Buy Tickets">Tickets</button>
+    </div>
+  </header>
+
+  <div class="admin-wrap">
+    <h1>Admin — Post & Manage Jobs</h1>
+    <p class="field-help">Use this form to create job postings. Admin actions require the server <strong>ADMIN_TOKEN</strong>. Protect this page.</p>
+
+    <div class="card">
+      <form id="adminForm" aria-label="Add job">
+        <div class="form-grid">
+          <div>
+            <label for="title">Title <span aria-hidden="true">*</span></label>
+            <input id="title" name="title" type="text" required placeholder="e.g. Frontend Developer">
+          </div>
+          <div>
+            <label for="company">Company <span aria-hidden="true">*</span></label>
+            <input id="company" name="company" type="text" required placeholder="Company name">
+          </div>
+        </div>
+
+        <div class="form-grid" style="margin-top:0.75rem">
+          <div>
+            <label for="location">Location</label>
+            <input id="location" name="location" type="text" placeholder="remote">
+          </div>
+          <div>
+            <label for="type">Type</label>
+            <input id="type" name="type" type="text" placeholder="full-time">
+          </div>
+        </div>
+
+        <div style="margin-top:0.75rem">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" placeholder="Job description and responsibilities"></textarea>
+        </div>
+
+        <div class="form-grid" style="margin-top:0.75rem">
+          <div>
+            <label for="link">Link</label>
+            <input id="link" name="link" type="url" placeholder="#">
+          </div>
+          <div>
+            <label for="posterEmail">Contact Email</label>
+            <input id="posterEmail" name="posterEmail" type="email" placeholder="hr@example.com">
+          </div>
+        </div>
+
+        <div style="margin-top:0.75rem">
+          <label for="requirements">Requirements</label>
+          <textarea id="requirements" name="requirements" placeholder="Qualifications, skills, portfolio link"></textarea>
+        </div>
+
+        <div class="form-grid" style="margin-top:0.75rem">
+          <div>
+            <label for="salary">Compensation</label>
+            <input id="salary" name="salary" type="text" placeholder="e.g. £40k - £55k or stipend">
+          </div>
+          <div style="display:flex;align-items:center;gap:0.5rem">
+            <input id="cvRequired" name="cvRequired" type="checkbox">
+            <label for="cvRequired" style="margin:0">CV / Resume required</label>
+          </div>
+        </div>
+
+        <label for="adminToken" style="margin-top:0.75rem">Admin Token (server ADMIN_TOKEN) <span class="field-help">Required to create/delete jobs</span></label>
+        <input id="adminToken" name="adminToken" type="password" required>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Create Job</button>
+          <button type="reset" class="btn btn-secondary">Clear</button>
+          <div style="flex:1"></div>
+          <p id="status" aria-live="polite" class="field-help" style="margin:0"></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="jobs-list">
+      <h2>Existing Jobs</h2>
+      <div id="jobsList" class="card" aria-live="polite">Loading jobs...</div>
+    </div>
+  </div>
+
+  <script src="scripts/admin.js"></script>
+  <script defer src="scripts/main.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu").querySelector("ul");
+
+    hamburger.addEventListener("click", () => {
+      const expanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", !expanded);
+      navMenu.classList.toggle("show");
+    });
+  });
+</script>
+</body>
+</html>

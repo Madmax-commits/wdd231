@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+    content="Konwea Shopping Plaza Chamber of Commerce - Supporting Local Business Growth and Community Development" />
+    <meta name="author" content="Tochukwu Carl-Mbanefo" />
+    <title>Admin - Event Management - Konwea Chambe</title>
+
+  <!-- Social Media Meta -->
+    <meta property="og:title" content="Konwea Shopping Plaza Chamber of Commerce" />
+    <meta property="og:description"
+    content="Welcome to Konwea Chamber of Commerce. Connecting businesses and communities. Explore events, business directories, and join the local economic movement." />
+    <meta property="og:image" content="images/social-preview.jpg" />
+    <meta property="og:url" content="https://yourdomain.com" />
+  <!-- Preconnect to API to shave connection time -->
+  <!-- Preload LCP hero image (use a WebP optimized variant if available) -->
+  <link rel="preload" as="image" href="images/coins-1726618.webp" type="image/webp" />
+
+  <link rel="icon" href="images/shopping-6125344_640.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/events.css">
+    <style>
+        body {
+            background-color: var(--bg);
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .admin-header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .admin-header-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--muted);
+        }
+
+        .admin-section {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--bg);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 0.85rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.15);
+        }
+
+        .form-group textarea {
+            grid-column: 1 / -1;
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-full-width {
+            grid-column: 1 / -1;
+        }
+
+        .mandatory-fields-section {
+            grid-column: 1 / -1;
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .mandatory-fields-section h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .mandatory-fields-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .field-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .field-checkbox:hover {
+            background: rgba(0, 77, 64, 0.05);
+        }
+
+        .field-checkbox input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--primary-color);
+        }
+
+        .field-checkbox label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            grid-column: 1 / -1;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.9rem 1.8rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #003d36 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 77, 64, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #00342f 0%, #002a25 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 77, 64, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+            border: 2px solid #e0e0e0;
+        }
+
+        .btn-secondary:hover {
+            background: #efefef;
+            border-color: var(--primary-color);
+        }
+
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        .events-list {
+            margin-top: 2rem;
+        }
+
+        .event-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--primary-color);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .event-item-content h4 {
+            color: var(--primary-color);
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .event-item-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .event-item-meta span {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .event-item-meta strong {
+            color: var(--primary-color);
+        }
+
+        .mandatory-fields-display {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .event-item-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .message {
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.success {
+            background: #d4edda;
+            border: 2px solid #c3e6cb;
+            color: #155724;
+            display: block;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            border: 2px solid #f5c6cb;
+            color: #721c24;
+            display: block;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted);
+        }
+
+        .empty-state p {
+            margin: 0;
+        }
+
+        .auth-token-section {
+            background: #fff3e0;
+            border: 2px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .auth-token-section h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .auth-token-section p {
+            color: #666;
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .token-input {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .token-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: monospace;
+        }
+
+        @media (max-width: 768px) {
+            .admin-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .admin-container {
+                padding: 1rem 0.75rem;
+            }
+
+            .section-title {
+                font-size: 1.25rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event-item {
+                grid-template-columns: 1fr;
+            }
+
+            .event-item-actions {
+                justify-content: flex-start;
+            }
+
+            .mandatory-fields-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+     <header role="banner">
+    <div class="header-inner">
+      <div class="logo">
+        <img 
+          src="images/shopping-6125344_640.png" 
+          alt="Konwea Chamber Logo" 
+          width="44" 
+          height="44" 
+          loading="eager"
+          decoding="async"
+        />
+        <span class="brand">Konwea Chamber of Commerce</span>
+      </div>
+
+      <button 
+        id="hamburger" 
+        aria-label="Toggle Navigation Menu" 
+        aria-expanded="false" 
+        aria-controls="navMenu"
+      >☰</button>
+
+      <nav id="navMenu" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+
+      <button class="cta" aria-label="Buy Tickets">Tickets</button>
+    </div>
+  </header>
+
+
+    <main>
+        <div class="admin-container">
+            <div class="admin-header">
+                <h1>📅 Event Management</h1>
+                <div class="admin-header-info">
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+
+            <div class="auth-token-section">
+                <h3>Authentication Required</h3>
+                <p>Enter your admin token to manage events. This token is required for all admin operations.</p>
+                <div class="token-input">
+                    <input type="password" id="adminToken" placeholder="Enter your admin token" autocomplete="off">
+                    <button class="btn btn-secondary" onclick="saveToken()">Save Token</button>
+                </div>
+            </div>
+
+            <div class="message" id="message"></div>
+
+            <!-- Create Event Section -->
+            <div class="admin-section">
+                <h2 class="section-title">Create New Event</h2>
+                <form id="eventForm" class="form-grid">
+                    <div class="form-group">
+                        <label for="eventTitle">Event Title *</label>
+                        <input type="text" id="eventTitle" name="eventTitle" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDate">Date *</label>
+                        <input type="date" id="eventDate" name="eventDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventTime">Time *</label>
+                        <input type="time" id="eventTime" name="eventTime" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventLocation">Location *</label>
+                        <input type="text" id="eventLocation" name="eventLocation" required>
+                    </div>
+
+                    <div class="form-group form-full-width">
+                        <label for="eventDescription">Description *</label>
+                        <textarea id="eventDescription" name="eventDescription" required></textarea>
+                    </div>
+
+                    <div class="form-group form-full-width">
+                        <label for="eventRequirements">Requirements *</label>
+                        <textarea id="eventRequirements" name="eventRequirements" required placeholder="List event requirements..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="posterEmail">Organizer Email *</label>
+                        <input type="email" id="posterEmail" name="posterEmail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentRequired">Payment Required?</label>
+                        <select id="paymentRequired" name="paymentRequired">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="costGroup" style="display: none;">
+                        <label for="cost">Cost (£) *</label>
+                        <input type="number" id="cost" name="cost" min="0" step="0.01" placeholder="0.00">
+                    </div>
+
+                    <div class="form-group form-full-width mandatory-fields-section">
+                        <h4>Mandatory Participant Information</h4>
+                        <p style="margin: 0 0 1rem 0; color: #666; font-size: 0.9rem;">Select which information participants must provide before registration is complete:</p>
+                        <div class="mandatory-fields-list">
+                            <div class="field-checkbox">
+                                <input type="checkbox" id="field-phone" name="mandatoryFields" value="phone">
+                                <label for="field-phone">Phone Number</label>
+                            </div>
+                            <div class="field-checkbox">
+                                <input type="checkbox" id="field-company" name="mandatoryFields" value="company">
+                                <label for="field-company">Company/Organization</label>
+                            </div>
+                            <div class="field-checkbox">
+                                <input type="checkbox" id="field-role" name="mandatoryFields" value="role">
+                                <label for="field-role">Job Title/Role</label>
+                            </div>
+                            <div class="field-checkbox">
+                                <input type="checkbox" id="field-industry" name="mandatoryFields" value="industry">
+                                <label for="field-industry">Industry</label>
+                            </div>
+                            <div class="field-checkbox">
+                                <input type="checkbox" id="field-experience" name="mandatoryFields" value="experience">
+                                <label for="field-experience">Experience Level</label>
+                            </div>
+                            <div class="field-checkbox">
+                                <input type="checkbox" id="field-goals" name="mandatoryFields" value="goals">
+                                <label for="field-goals">Event Goals</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Create Event</button>
+                        <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Events List Section -->
+            <div class="admin-section">
+                <h2 class="section-title">Manage Events</h2>
+                <div id="eventsList" class="events-list">
+                    <div class="loading">Loading events...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer will be inserted here -->
+    </footer>
+
+    <script src="scripts/admin-participation.js"></script>
+    <script defer src="scripts/main.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu").querySelector("ul");
+
+    hamburger.addEventListener("click", () => {
+      const expanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", !expanded);
+      navMenu.classList.toggle("show");
+    });
+  });
+</script>
+
+</body>
+</html>

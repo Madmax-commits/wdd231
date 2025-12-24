@@ -1,0 +1,555 @@
+/* CSS Variables */
+:root {
+    --primary: #004d40;
+    --primary-color: #004d40;
+    --primary-dark: #00342f;
+    --primary-rgb: 0, 77, 64;
+    --accent: #ffb300;
+    --accent-color: #ff9500;
+    --accent-light: #fff3e0;
+    --bg: #f5f5f5;
+    --bg-light: #fafafa;
+    --bg-secondary: #ffffff;
+    --card: #ffffff;
+    --text: #0f1724;
+    --muted: #6b7280;
+    --radius: 16px;
+    --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    --transition: 0.25s ease;
+    --success: #10b981;
+    --error: #ef4444;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Main Container */
+.events-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.hero h1 {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    color: var(--muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Events Section */
+.events-section {
+    margin-bottom: 3rem;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    color: var(--primary);
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-count {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* Loading State */
+.loading {
+    background: var(--card);
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    color: var(--muted);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Events Grid */
+.events-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.event-card {
+    background: var(--card);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+    border-top: 4px solid transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 77, 64, 0.15);
+    border-top-color: var(--accent);
+}
+
+.event-card time {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.event-card h3 {
+    color: var(--text);
+    font-size: 1.3rem;
+    margin: 1rem 0 0.75rem 0;
+}
+
+.event-card p {
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+}
+
+.event-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    margin: 1rem 0;
+}
+
+.event-card a {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 0.7rem 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all var(--transition);
+}
+
+.event-card a:hover {
+    background-color: var(--accent);
+    color: var(--text);
+    transform: translateX(4px);
+}
+
+/* Empty State */
+.empty-state {
+    background: var(--card);
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    color: var(--muted);
+}
+
+/* Proposal Section */
+.proposal-section {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+    margin-top: 3rem;
+}
+
+.proposal-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.proposal-description {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+/* Form Styles */
+.proposal-form {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 600px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.85rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all var(--transition);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(255, 179, 0, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.error-message {
+    color: #ffcccc;
+    font-size: 0.85rem;
+    display: none;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border: 2px solid #ffcccc;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+small {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+}
+
+/* Form Actions */
+.form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.85rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: white;
+    color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent);
+    color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Success Message */
+.success-message {
+    background-color: rgba(16, 185, 129, 0.2);
+    border: 1px solid #10b981;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modal-content {
+    background-color: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--muted);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all var(--transition);
+}
+
+.modal-close:hover {
+    background-color: var(--bg);
+    color: var(--primary);
+}
+
+.modal-body {
+    margin: 1.5rem 0;
+}
+
+.event-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.event-meta p {
+    margin: 0;
+}
+
+.event-meta strong {
+    color: var(--primary);
+}
+
+.event-requirements {
+    background-color: var(--bg);
+    padding: 1rem;
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+    margin: 1.5rem 0;
+}
+
+.event-requirements h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary);
+}
+
+.event-requirements p {
+    margin: 0;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--bg);
+}
+
+.modal-footer .btn {
+    padding: 0.85rem 1.8rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#modalParticipateBtn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #003d36 100%);
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.85rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 77, 64, 0.2);
+    transition: all 0.3s ease;
+}
+
+#modalParticipateBtn:hover {
+    background: linear-gradient(135deg, #00342f 0%, #002a25 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 77, 64, 0.3);
+    text-decoration: none;
+}
+
+#modalParticipateBtn:active {
+    transform: translateY(-1px);
+}
+
+.modal-close-btn {
+    background: #f5f5f5;
+    color: #333;
+    border: 2px solid #e0e0e0;
+    cursor: pointer;
+}
+
+.modal-close-btn:hover {
+    background: #efefef;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .events-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .events-container {
+        padding: 1rem 0.75rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .proposal-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .form-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .event-card {
+        padding: 1.25rem;
+    }
+
+    .proposal-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+        max-height: 95vh;
+    }
+
+    .modal-close {
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+    }
+
+    .modal-footer .btn {
+        width: 100%;
+    }
+}

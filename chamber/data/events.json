@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Business Networking Breakfast",
+    "date": "2025-12-28",
+    "time": "07:30",
+    "location": "Konwea Chamber Office, Main Conference Room",
+    "description": "Join fellow business professionals for an energizing breakfast and networking session. Connect with potential clients, partners, and collaborators in a casual, welcoming environment. This event is perfect for entrepreneurs, managers, and business owners looking to expand their professional network.",
+    "requirements": "Business card recommended; casual business attire",
+    "posterEmail": "events@konweachamber.com",
+    "paymentRequired": false,
+    "cost": null,
+    "mandatoryFields": ["phone", "company", "role"],
+    "postedAt": "2025-12-15T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Small Business Workshop: Social Media Marketing",
+    "date": "2026-01-05",
+    "time": "14:00",
+    "location": "Konwea Chamber Training Centre, Room 202",
+    "description": "Learn effective social media strategies to grow your business. This hands-on workshop covers Facebook, Instagram, LinkedIn, and TikTok marketing techniques. Topics include content creation, audience engagement, analytics, and budget optimization. Ideal for business owners and marketing professionals.",
+    "requirements": "Laptop or tablet recommended; basic social media knowledge helpful",
+    "posterEmail": "training@konweachamber.com",
+    "paymentRequired": true,
+    "cost": 25.00,
+    "mandatoryFields": ["phone", "company", "experience", "goals"],
+    "postedAt": "2025-12-10T09:00:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Digital Marketing Seminar",
+    "date": "2026-01-12",
+    "time": "11:00",
+    "location": "Konwea Business Hub, Auditorium",
+    "description": "Discover the latest trends in digital marketing including SEO, email marketing, paid advertising, and content strategy. Expert speakers will share case studies and practical insights. Network with other marketing professionals during the break.",
+    "requirements": "No prior experience needed; notebook for taking notes",
+    "posterEmail": "events@konweachamber.com",
+    "paymentRequired": true,
+    "cost": 10.00,
+    "mandatoryFields": ["phone", "industry"],
+    "postedAt": "2025-12-12T14:30:00Z"
+  }
+]

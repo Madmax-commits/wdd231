@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+    content="Konwea Shopping Plaza Chamber of Commerce - Supporting Local Business Growth and Community Development" />
+    <meta name="author" content="Tochukwu Carl-Mbanefo" />
+    <title>Apply — Konwea Chamber</title>
+
+  <!-- Social Media Meta -->
+    <meta property="og:title" content="Konwea Shopping Plaza Chamber of Commerce" />
+    <meta property="og:description"
+    content="Welcome to Konwea Chamber of Commerce. Connecting businesses and communities. Explore events, business directories, and join the local economic movement." />
+    <meta property="og:image" content="images/social-preview.jpg" />
+    <meta property="og:url" content="https://yourdomain.com" />
+  <!-- Preconnect to API to shave connection time -->
+  <!-- Preload LCP hero image (use a WebP optimized variant if available) -->
+  <link rel="preload" as="image" href="images/coins-1726618.webp" type="image/webp" />
+
+  <link rel="icon" href="images/shopping-6125344_640.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/jobs.css">
+  <style>
+    /* Small overrides for the apply form to match chamber style */
+    .apply-container{max-width:900px;margin:2rem auto;background:var(--card);padding:1.25rem;border-radius:12px;box-shadow:var(--shadow)}
+    .apply-hero{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .apply-hero h1{margin:0;color:var(--primary)}
+    .apply-form{margin-top:1rem}
+    .apply-form label{display:block;margin:0.5rem 0;font-weight:600}
+    .apply-form input,.apply-form textarea{width:100%;padding:0.6rem;border:1px solid #e5e7eb;border-radius:8px}
+    .apply-form button{margin-top:0.75rem}
+    .note{color:var(--muted);font-size:0.95rem}
+  </style>
+</head>
+<body>
+  <main class="apply-container">
+    <div class="apply-hero">
+      <div>
+        <h1 id="jobTitle">Loading…</h1>
+        <div id="jobCompany" class="note">&nbsp;</div>
+      </div>
+      <div id="jobMeta" class="note">&nbsp;</div>
+    </div>
+
+    <section id="jobDetails" style="margin-top:1rem"></section>
+
+    <section class="apply-form">
+      <form id="applyForm" enctype="multipart/form-data">
+        <label for="applicantEmail">Your email</label>
+        <input id="applicantEmail" name="applicantEmail" type="email" required>
+
+        <label for="contactNumber">Contact number</label>
+        <input id="contactNumber" name="contactNumber" type="text" required>
+
+        <label for="message">Message (optional)</label>
+        <textarea id="message" name="message"></textarea>
+
+        <div id="cvField"></div>
+
+        <div style="display:flex;gap:0.5rem;align-items:center;margin-top:0.75rem">
+          <button id="submitApply" class="btn btn-primary" type="submit">Send Application</button>
+          <a id="backLink" class="btn btn-secondary" href="jobs.html" style="text-decoration:none;display:inline-block;padding:0.6rem 1rem;border-radius:8px;margin-left:1rem">Back to jobs</a>
+        </div>
+
+        <p id="applyStatus" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts/apply.js"></script>
+</body>
+</html>

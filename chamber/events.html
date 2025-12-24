@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore upcoming events and programs at Konwea Chamber. Networking opportunities, workshops, and more.">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+    content="Konwea Shopping Plaza Chamber of Commerce - Supporting Local Business Growth and Community Development" />
+    <meta name="author" content="Tochukwu Carl-Mbanefo" />
+    <title>Events & Programs | Konwea Chamber</title>
+
+  <!-- Social Media Meta -->
+    <meta property="og:title" content="Konwea Shopping Plaza Chamber of Commerce" />
+    <meta property="og:description"
+    content="Welcome to Konwea Chamber of Commerce. Connecting businesses and communities. Explore events, business directories, and join the local economic movement." />
+    <meta property="og:image" content="images/social-preview.jpg" />
+    <meta property="og:url" content="https://yourdomain.com" />
+  <!-- Preconnect to API to shave connection time -->
+  <!-- Preload LCP hero image (use a WebP optimized variant if available) -->
+  <link rel="preload" as="image" href="images/coins-1726618.webp" type="image/webp" />
+
+  <link rel="icon" href="images/shopping-6125344_640.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/events.css">
+</head>
+
+<body>
+     <header role="banner">
+    <div class="header-inner">
+      <div class="logo">
+        <img 
+          src="images/shopping-6125344_640.png" 
+          alt="Konwea Chamber Logo" 
+          width="44" 
+          height="44" 
+          loading="eager"
+          decoding="async"
+        />
+        <span class="brand">Konwea Chamber of Commerce</span>
+      </div>
+
+      <button 
+        id="hamburger" 
+        aria-label="Toggle Navigation Menu" 
+        aria-expanded="false" 
+        aria-controls="navMenu"
+      >☰</button>
+
+      <nav id="navMenu" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+
+      <button class="cta" aria-label="Buy Tickets">Tickets</button>
+    </div>
+  </header>
+
+    <main class="events-container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Upcoming Events & Programs</h1>
+            <p class="hero-subtitle">Grow, connect, and collaborate with Konwea Chamber</p>
+        </section>
+
+        <!-- Events Section -->
+        <section class="events-section">
+            <div class="section-header">
+                <h2>Featured Events</h2>
+                <p id="eventCount" class="event-count" aria-live="polite">Loading events...</p>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading" aria-hidden="true">
+                <p>Loading events...</p>
+            </div>
+
+            <!-- Events Grid -->
+            <div id="eventsContainer" class="events-grid" role="region" aria-label="Event listings">
+                <!-- Events will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" hidden aria-live="polite">
+                <p>No events scheduled at the moment. Check back soon!</p>
+            </div>
+        </section>
+
+        <!-- Proposal Section -->
+        <section class="proposal-section">
+            <h2>Submit an Event Proposal</h2>
+            <p class="proposal-description">Have an event idea? Share it with us and let's make it happen!</p>
+            
+            <form id="proposalForm" class="proposal-form" novalidate>
+                <div class="form-group">
+                    <label for="organizationName">Organization Name *</label>
+                    <input 
+                        type="text" 
+                        id="organizationName" 
+                        name="organizationName" 
+                        placeholder="Your organization name"
+                        required
+                        aria-required="true"
+                    >
+                    <small class="error-message" id="organizationError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="contact@example.com"
+                        required
+                        aria-required="true"
+                    >
+                    <small class="error-message" id="emailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventTitle">Event Title *</label>
+                    <input 
+                        type="text" 
+                        id="eventTitle" 
+                        name="eventTitle" 
+                        placeholder="What's your event about?"
+                        required
+                        aria-required="true"
+                    >
+                    <small class="error-message" id="eventTitleError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDate">Preferred Date</label>
+                    <input 
+                        type="date" 
+                        id="eventDate" 
+                        name="eventDate"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="proposalDetails">Proposal Details *</label>
+                    <textarea 
+                        id="proposalDetails" 
+                        name="proposalDetails" 
+                        placeholder="Describe your event proposal in detail..."
+                        rows="5"
+                        required
+                        aria-required="true"
+                    ></textarea>
+                    <small class="error-message" id="detailsError"></small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Proposal</button>
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                </div>
+
+                <div id="successMessage" class="success-message" hidden aria-live="polite">
+                    ✓ Thank you! Your proposal has been submitted successfully.
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand">Konwea Chamber</span>
+        <p>Building stronger business connections in Delta State.</p>
+      </div>
+
+      <div class="footer-contact">
+        <p><strong>Contact:</strong></p>
+        <address>
+          <p>📍 289 Nnebisi Road, Asaba</p>
+          <p>📧 <a href="mailto:KonweaChamber@proton.me">KonweaChamber@proton.me</a></p>
+          <p>📞 <a href="tel:+2340000000000">(+234) 0000-0000-00</a></p>
+        </address>
+      </div>
+
+      <div class="footer-links">
+        <p><strong>Quick Links:</strong></p>
+        <nav aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="directory.html">Directory</a>
+          <a href="join.html">Join</a>
+          <a href="discover.html">Discover</a>
+        </nav>
+      </div>
+
+      <div class="social">
+        <p><strong>Follow Us:</strong></p>
+        <nav aria-label="Social media links">
+          <a 
+            href="https://facebook.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Konwea Chamber on Facebook"
+          >Facebook</a>
+          <a 
+            href="https://twitter.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Konwea Chamber on Twitter"
+          >Twitter</a>
+          <a 
+            href="https://linkedin.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Konwea Chamber on LinkedIn"
+          >LinkedIn</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Konwea Chamber of Commerce | Tochukwu Carl-Mbanefo</p>
+      <p>&copy; <span id="year"></span> Konwea Chamber of Commerce</p>
+      <p>Last Updated: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+
+    <script src="scripts/events.js"></script>
+    <script defer src="scripts/main.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu").querySelector("ul");
+
+    hamburger.addEventListener("click", () => {
+      const expanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", !expanded);
+      navMenu.classList.toggle("show");
+    });
+  });
+</script>
+</body>
+</html>
