@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cta = document.createElement('a');
     cta.className = 'event-cta';
-    cta.href = '#';
+    cta.href = './events.html';
     cta.textContent = 'Learn More';
     contentDiv.appendChild(cta);
 
