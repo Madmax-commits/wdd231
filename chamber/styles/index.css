@@ -372,9 +372,11 @@ img{max-width:100%;height:auto;display:block}
 .events{
   margin: 0 1rem 2.25rem;
   padding: 1rem;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .events h2{
@@ -395,6 +397,20 @@ img{max-width:100%;height:auto;display:block}
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(12,18,26,0.06);
   border: 1px solid rgba(15,23,36,0.04);
+  box-sizing: border-box;
+  width: calc(50% - 0.5rem);
+}
+
+/* Responsive: stack event cards on small screens */
+@media (max-width: 760px) {
+  .events {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+  .events > article {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 
 /* Left meta column: date/time stacked */

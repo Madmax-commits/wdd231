@@ -62,31 +62,12 @@
     </section>
 
     <!-- Events -->
-    <section class="events" aria-labelledby="events-heading">
-      <h2 id="events-heading">Upcoming Events &amp; Programs</h2>
-      <article>
-        <div class="meta">
-          <time datetime="2025-10-15T07:30">October 15, 2025 @ 7:30 AM</time>
-          <span class="place">Community Hall</span>
-        </div>
-        <div class="content">
-          <h3>Business Networking Breakfast</h3>
-          <p>Connect with local business leaders and entrepreneurs over breakfast.</p>
-          <a href="#" class="event-cta">Learn More</a>
-        </div>
-      </article>
-
-      <article>
-        <div class="meta">
-          <time datetime="2025-10-22T17:00">October 22, 2025 @ 5:00 PM</time>
-          <span class="place">Chamber Office</span>
-        </div>
-        <div class="content">
-          <h3>Small Business Workshop</h3>
-          <p>Expert tips for growing your small business in the digital age.</p>
-          <a href="#" class="event-cta">Register</a>
-        </div>
-      </article>
+    <!-- Job Postings -->
+    <section class="job-postings" aria-labelledby="jobs-heading">
+      <h2 id="jobs-heading">Latest Job Postings</h2>
+      <div id="jobsContainer" class="jobs-grid" role="region" aria-label="Job listings">
+        <p class="loading-text">Loading latest jobs...</p>
+      </div>
     </section>
 
     <!-- Weather -->
@@ -188,5 +169,6 @@
   <script src="scripts/directory.js"></script>
   <script src="scripts/spotlight.js"></script>
   <script defer src="scripts/weather.js"></script>
+  <script defer src="scripts/index-jobs.js"></script>
 </body>
 </html>
