@@ -271,31 +271,34 @@ document.addEventListener("DOMContentLoaded", () => {
   let slideIndex = 0;
   const slides = document.querySelectorAll(".slideshow .slide");
   const dots = document.querySelectorAll(".slideshow .dot");
+  let slideTimer = null;
 
-  function showSlides() {
+  function showSlide(index) {
     slides.forEach(s => s.style.display = "none");
     dots.forEach(d => d.classList.remove("active"));
-
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].classList.add("active");
-
-    setTimeout(showSlides, 4000); // change every 4s
+    if (!slides[index]) return;
+    slides[index].style.display = "block";
+    dots[index].classList.add("active");
   }
 
-  // Start slideshow
-  showSlides();
+  function startSlideshow() {
+    slideTimer = setInterval(() => {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    }, 4000);
+  }
 
-  // Allow manual dot navigation
+  if (slides.length > 0) {
+    showSlide(slideIndex);
+    startSlideshow();
+  }
+
   dots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
+      if (slideTimer) clearInterval(slideTimer);
       slideIndex = i;
-      slides.forEach(s => s.style.display = "none");
-      dots.forEach(d => d.classList.remove("active"));
-      slides[slideIndex].style.display = "block";
-      dots[slideIndex].classList.add("active");
+      showSlide(slideIndex);
+      startSlideshow();
     });
   });
 });
